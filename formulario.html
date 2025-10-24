@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Mentoria - Platina Para Todos</title>
+    <title>Formulário de Mentoria - Platina Para Todos</title>
     <style>
         body { 
             margin: 0; 
@@ -64,6 +64,14 @@
             content: " *";
             color: #e74c3c;
         }
+        .info-box {
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -78,11 +86,18 @@
     <section class="form-container">
         <a href="index.html" style="background: #e74c3c; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; display: inline-block; margin-bottom: 20px;">← Voltar para Home</a>
         
+        <div class="info-box">
+            <h2 style="margin: 0 0 10px 0; font-size: 1.8em;">🎯 SOLICITAR MENTORIA</h2>
+            <p style="margin: 0; font-size: 1.1em;">Preencha o formulário e entraremos em contato em até 24h!</p>
+        </div>
+        
         <div class="form-card">
-            <h2 style="color: #2c3e50; text-align: center; margin: 0 0 10px 0; font-size: 1.8em;">🎯 SOLICITAR MENTORIA</h2>
-            <p style="color: #7f8c8d; text-align: center; margin: 0 0 30px 0; font-size: 1.1em;">Preencha o formulário e entraremos em contato em até 24h!</p>
-            
             <form action="https://formsubmit.co/misscabritas2@gmail.com" method="POST">
+                <!-- Campos hidden do FormSubmit -->
+                <input type="hidden" name="_next" value="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/formobrigado.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nova solicitação de mentoria - Platina Para Todos">
+                
                 <!-- Nome -->
                 <div class="form-group">
                     <label for="nome" class="required">👤 Seu Nome (ou apelido):</label>
@@ -132,11 +147,6 @@
                     <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Ex: Estou travado no chefe Malenia há 2 semanas, preciso de dicas de esquiva e build..."></textarea>
                 </div>
                 
-                <!-- Campos hidden do FormSubmit -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="formobrigado.html">
-                <input type="hidden" name="_subject" value="Nova solicitação de mentoria - Platina Para Todos">
-                
                 <button type="submit" class="submit-btn">🚀 SOLICITAR MENTORIA GRATUITA</button>
             </form>
             
@@ -152,7 +162,7 @@
 
     <!-- FOOTER -->
     <footer style="background: #1a252f; color: white; padding: 20px; text-align: center; margin-top: 40px;">
-        <p style="margin: 0 0 8px 0; font-size: 0.9em;">contato@platinaparatodos.org</p>
+        <p style="margin: 0 0 8px 0; font-size: 0.9em;">misscabritas2@gmail.com</p>
         <p style="margin: 0; font-size: 0.8em; color: #bdc3c7;">Platina Para Todos &copy; 2024</p>
     </footer>
 
