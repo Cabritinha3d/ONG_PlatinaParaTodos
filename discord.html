@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord - Platina Para Todos</title>
+    <style>
+        .discord-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border-left: 5px solid #5865F2;
+        }
+        .channel-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #5865F2;
+        }
+        .channel-item {
+            background: white;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 3px solid #7289DA;
+        }
+        .discord-btn {
+            background: #5865F2;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 1.1em;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-top: 4px solid #5865F2;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .stat-item {
+            background: #7289DA;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background: #ecf0f1; font-family: Arial, sans-serif;">
+
+    <!-- HEADER -->
+    <header style="text-align: center; background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8)), url('imgs/banner.jpeg'); background-size: cover; background-position: center; color: white; padding: 30px 20px;">
+        <h1 style="margin: 0 0 12px 0; font-size: 2.2em;">💬 DISCORD COMUNITÁRIO</h1>
+        <p style="margin: 0 0 15px 0; font-size: 1.1em; max-width: 600px; margin-left: auto; margin-right: auto;">✨ "O lugar onde gamers se encontram para conquistar juntos!" ✨</p>
+        <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; display: inline-block;">
+            <p style="margin: 0; font-size: 1em;">
+                🎮 <strong>1.500+ Membros</strong> | 
+                📚 <strong>50+ Canais</strong> | 
+                🏆 <strong>24/7 Ativo</strong>
+            </p>
+        </div>
+    </header>
+
+    <!-- MENU -->
+    <nav style="text-align: center; background: #2c3e50; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <a href="index.html" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">🏠 INÍCIO</a>
+        <a href="#canais" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">📢 CANAIS</a>
+        <a href="#eventos" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">🎪 EVENTOS</a>
+        <a href="#regras" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">📜 REGRAS</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section style="padding: 40px 20px;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+
+            <!-- BANNER DISCORD -->
+            <div style="background: linear-gradient(135deg, #5865F2, #7289DA); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 4em; margin-bottom: 15px;">💬</div>
+                <h2 style="margin: 0 0 15px 0; font-size: 2em;">JUNTE-SE A NOSSA COMUNIDADE!</h2>
+                <p style="margin: 0 0 25px 0; font-size: 1.2em;">Mais de 1.500 gamers ajudando uns aos outros 24 horas por dia</p>
+                <a href="https://discord.gg/platinaparatodos" class="discord-btn" style="background: #57F287; color: #2c3e50;">
+                    🚀 ENTRAR NO DISCORD
+                </a>
+                <p style="margin: 15px 0 0 0; font-size: 0.9em; opacity: 0.9;">
+                    Link fictício para demonstração - Quando criar seu Discord, basta atualizar!
+                </p>
+            </div>
+
+            <!-- ESTATÍSTICAS -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div style="font-size: 2em; margin-bottom: 8px;">👥</div>
+                    <h3 style="margin: 0 0 5px 0;">1.500+</h3>
+                    <p style="margin: 0; font-size: 0.9em;">Membros Ativos</p>
+                </div>
+                <div class="stat-item">
+                    <div style="font-size: 2em; margin-bottom: 8px;">📢</div>
+                    <h3 style="margin: 0 0 5px 0;">50+</h3>
+                    <p style="margin: 0; font-size: 0.9em;">Canais Especializados</p>
+                </div>
+                <div class="stat-item">
+                    <div style="font-size: 2em; margin-bottom: 8px;">🏆</div>
+                    <h3 style="margin: 0 0 5px 0;">5.000+</h3>
+                    <p style="margin: 0; font-size: 0.9em;">Platinas Conquistadas</p>
+                </div>
+            </div>
+
+            <!-- CANAIS -->
+            <div id="canais" class="discord-card">
+                <h2 style="color: #5865F2; margin: 0 0 25px 0; text-align: center;">📢 NOSSOS CANAIS</h2>
+                
+                <!-- Categoria Ajuda -->
+                <div class="channel-category">
+                    <h3 style="color: #e74c3c; margin: 0 0 15px 0;">🎯 CANAIS DE AJUDA</h3>
+                    <div class="channel-item">
+                        <strong>#💀-from-software</strong> - Dark Souls, Elden Ring, Sekiro
+                    </div>
+                    <div class="channel-item">
+                        <strong>#👥-co-op-games</strong> - It Takes Two, Overcooked, MH
+                    </div>
+                    <div class="channel-item">
+                        <strong>#📚-rpgs</strong> - The Witcher, Skyrim, Final Fantasy
+                    </div>
+                    <div class="channel-item">
+                        <strong>#🎮-jogos-geral</strong> - Dúvidas de outros jogos
+                    </div>
+                </div>
+
+                <!-- Categoria Comunidade -->
+                <div class="channel-category">
+                    <h3 style="color: #3498db; margin: 0 0 15px 0;">💬 COMUNIDADE</h3>
+                    <div class="channel-item">
+                        <strong>#🏆-conquistas</strong> - Mostre suas platinas!
+                    </div>
+                    <div class="channel-item">
+                        <strong>#📸-clips-memes</strong> - Momentos engraçados
+                    </div>
+                    <div class="channel-item">
+                        <strong>#💡-dicas-gerais</strong> - Estratégias compartilhadas
+                    </div>
+                    <div class="channel-item">
+                        <strong>#🎉-apresentações</strong> - Seja bem-vindo!
+                    </div>
+                </div>
+
+                <!-- Categoria Recursos -->
+                <div class="channel-category">
+                    <h3 style="color: #f39c12; margin: 0 0 15px 0;">📚 RECURSOS</h3>
+                    <div class="channel-item">
+                        <strong>#📖-guias-comunitarios</strong> - Guias feitos por membros
+                    </div>
+                    <div class="channel-item">
+                        <strong>#🎥-tutoriais</strong> - Videoaulas e gameplays
+                    </div>
+                    <div class="channel-item">
+                        <strong>#🤖-bot-comandos</strong> - Comandos úteis do bot
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENTOS -->
+            <div id="eventos" class="discord-card">
+                <h2 style="color: #5865F2; margin: 0 0 25px 0; text-align: center;">🎪 EVENTOS SEMANAIS</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="feature-card">
+                        <h3 style="color: #e74c3c; margin: 0 0 10px 0;">🗡️ Sexta do Souls</h3>
+                        <p style="margin: 0; color: #2c3e50;">Toda sexta - 20h | Co-op e PvP nos jogos From Software</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="color: #3498db; margin: 0 0 10px 0;">👥 Sábado Cooperativo</h3>
+                        <p style="margin: 0; color: #2c3e50;">Todo sábado - 16h | Jogatina em grupo de co-op games</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="color: #f39c12; margin: 0 0 10px 0;">🏆 Desafio Semanal</h3>
+                        <p style="margin: 0; color: #2c3e50;">Toda semana um novo desafio com premiação</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGRAS -->
+            <div id="regras" class="discord-card">
+                <h2 style="color: #5865F2; margin: 0 0 25px 0; text-align: center;">📜 REGRAS DA COMUNIDADE</h2>
+                
+                <div style="background: #fff3cd; color: #856404; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <h3 style="margin: 0 0 15px 0; color: #856404;">🎯 Nosso Lema: "Respeito acima de tudo!"</h3>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: #e74c3c; margin: 0 0 10px 0;">✅ O QUE FAZEMOS:</h4>
+                        <ul style="color: #2c3e50; margin: 0; padding-left: 20px;">
+                            <li>Ajudamos uns aos outros</li>
+                            <li>Compartilhamos conhecimento</li>
+                            <li>Respeitamos todas as skill levels</li>
+                            <li>Comemoramos cada conquista</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #e74c3c; margin: 0 0 10px 0;">❌ O QUE NÃO FAZEMOS:</h4>
+                        <ul style="color: #2c3e50; margin: 0; padding-left: 20px;">
+                            <li>Toxidade ou bullying</li>
+                            <li>Spoilers sem aviso</li>
+                            <li>Spam ou flood</li>
+                            <li>Conteúdo ofensivo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CALL TO ACTION FINAL -->
+            <div style="background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 30px;">
+                <h2 style="margin: 0 0 15px 0;">🎮 O QUE ESTÁ ESPERANDO?</h2>
+                <p style="margin: 0 0 25px 0; font-size: 1.1em;">Junte-se a maior comunidade de ajuda gamer do Brasil!</p>
+                <a href="https://discord.gg/platinaparatodos" class="discord-btn" style="background: #57F287; color: #2c3e50; font-size: 1.2em;">
+                    🚀 ENTRAR NO DISCORD AGORA!
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #1a252f; color: white; padding: 20px; text-align: center; margin-top: 40px;">
+        <p style="margin: 0 0 8px 0; font-size: 0.9em;">misscabritas2@gmail.com</p>
+        <p style="margin: 0; font-size: 0.8em; color: #bdc3c7;">Platina Para Todos &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
