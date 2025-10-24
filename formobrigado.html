@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Obrigado! - Platina Para Todos</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: #ecf0f1; 
+            font-family: Arial, sans-serif; 
+            text-align: center;
+        }
+        .thank-you-container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 50px 20px; 
+        }
+        .success-card { 
+            background: white; 
+            padding: 50px 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            border-top: 6px solid #27ae60;
+        }
+        .success-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        .next-steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid #3498db;
+        }
+        .step {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .step::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+        .btn-secondary {
+            background: #3498db;
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <!-- HEADER -->
+    <header style="text-align: center; background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8)), url('imgs/banner.jpeg'); background-size: cover; background-position: center; color: white; padding: 30px 20px;">
+        <h1 style="margin: 0 0 12px 0; font-size: 2.2em;">🎮 PLATINA PARA TODOS</h1>
+        <p style="margin: 0 0 15px 0; font-size: 1.1em; max-width: 600px; margin-left: auto; margin-right: auto;">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
+    </header>
+
+    <!-- CONTEÚDO OBRIGADO -->
+    <section class="thank-you-container">
+        <div class="success-card">
+            <div class="success-icon">🎉</div>
+            
+            <h2 style="color: #27ae60; margin: 0 0 15px 0; font-size: 2em;">SOLICITAÇÃO ENVIADA COM SUCESSO!</h2>
+            
+            <p style="color: #2c3e50; font-size: 1.2em; margin: 0 0 25px 0; line-height: 1.5;">
+                <strong>Obrigado por confiar na gente!</strong> Sua solicitação de mentoria foi recebida e entraremos em contato em até <strong>24 horas</strong>.
+            </p>
+
+            <div class="next-steps">
+                <h3 style="color: #2c3e50; margin: 0 0 15px 0;">📋 O que acontece agora:</h3>
+                
+                <div class="step">
+                    <strong>Verificação do email</strong> - Enviamos um email de confirmação para você
+                </div>
+                
+                <div class="step">
+                    <strong>Análise da sua solicitação</strong> - Nossos mentores especializados vão analisar seu caso
+                </div>
+                
+                <div class="step">
+                    <strong>Contato personalizado</strong> - Um mentor entrará em contato para combinar os detalhes
+                </div>
+                
+                <div class="step">
+                    <strong>Sessão de mentoria</strong> - Marcamos a sessão no horário que for melhor para você
+                </div>
+            </div>
+
+            <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffc107;">
+                <p style="margin: 0; font-size: 0.9em;">
+                    <strong>💡 Dica:</strong> Enquanto espera nosso contato, junte-se ao nosso 
+                    <a href="discord.html" style="color: #3498db; font-weight: bold;">Discord</a> para conversar com outros gamers!
+                </p>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="index.html" class="btn btn-primary">🏠 Voltar para Home</a>
+                <a href="discord.html" class="btn btn-secondary">💬 Entrar no Discord</a>
+                <a href="guias.html" class="btn btn-secondary">📚 Ver Guias</a>
+            </div>
+
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #ecf0f1;">
+                <p style="color: #7f8c8d; margin: 0; font-size: 0.9em;">
+                    Dúvidas? <a href="mailto:contato@platinaparatodos.org" style="color: #3498db;">contato@platinaparatodos.org</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #1a252f; color: white; padding: 20px; text-align: center; margin-top: 40px;">
+        <p style="margin: 0 0 8px 0; font-size: 0.9em;">contato@platinaparatodos.org</p>
+        <p style="margin: 0; font-size: 0.8em; color: #bdc3c7;">Platina Para Todos &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
