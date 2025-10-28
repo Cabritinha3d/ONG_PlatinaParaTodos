@@ -37,7 +37,7 @@ body {
 }
 
 .section {
-    padding: 60px 0;
+    padding: 40px 0; /* Reduzido o espaçamento */
 }
 
 .section-light {
@@ -61,23 +61,24 @@ body {
                 url('../imgs/sobre0.jpeg') center/cover;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px; /* Reduzido o padding */
+    margin-bottom: 0; /* Remove margem inferior */
 }
 
 .hero-title {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduzido */
 }
 
 .hero-subtitle {
     font-size: 1.3em;
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Reduzido */
 }
 
 .hero-tagline {
     font-size: 1.1em;
     background: rgba(233, 69, 96, 0.9);
-    padding: 15px 25px;
+    padding: 12px 20px; /* Reduzido */
     border-radius: 8px;
     display: inline-block;
 }
@@ -85,7 +86,7 @@ body {
 /* ===== NAVEGAÇÃO ===== */
 .nav-main {
     background: var(--primary-dark);
-    padding: 20px 0;
+    padding: 15px 0; /* Reduzido */
     text-align: center;
 }
 
@@ -106,19 +107,19 @@ body {
 .objective-card {
     background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
     color: white;
-    padding: 40px;
+    padding: 30px; /* Reduzido */
     border-radius: 15px;
-    margin: 30px auto;
+    margin: 20px auto; /* Reduzida a margem superior */
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .objective-card h2 {
     background: rgba(255,255,255,0.2);
-    padding: 12px 25px;
+    padding: 10px 20px; /* Reduzido */
     border-radius: 25px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduzido */
     font-size: 1.3em;
 }
 
@@ -144,10 +145,10 @@ body {
     gap: 25px;
 }
 
-/* ===== MENU SERVIÇOS ===== */
+/* ===== MENU SERVIÇOS - LINKS PERSONALIZADOS ===== */
 .service-menu {
     background: white;
-    padding: 25px;
+    padding: 20px; /* Reduzido */
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
@@ -161,19 +162,27 @@ body {
 
 .service-menu p {
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduzido */
     text-align: center;
+}
+
+/* LINKS PERSONALIZADOS - SEM AZUL PADRÃO */
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .service-item {
     padding: 15px;
-    margin: 10px 0;
+    margin: 8px 0; /* Reduzido */
     background: #f8f9fa;
     border-left: 4px solid;
     border-radius: 8px;
     transition: all 0.3s;
     cursor: pointer;
     text-align: center;
+    color: #333; /* Cor do texto padrão */
 }
 
 .service-item:hover {
@@ -184,14 +193,15 @@ body {
 
 .service-item strong {
     font-size: 1em;
+    color: inherit; /* Herda a cor do pai */
 }
 
 /* ===== CARDS NORMAIS ===== */
 .card {
     background: white;
     border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 25px; /* Reduzido */
+    margin-bottom: 25px; /* Reduzido */
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
@@ -228,7 +238,7 @@ img {
 
 .image-container {
     text-align: center;
-    margin: 25px 0;
+    margin: 20px 0; /* Reduzido */
 }
 
 /* ===== DESTAQUES ===== */
@@ -236,7 +246,7 @@ img {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
-    margin: 25px 0;
+    margin: 20px 0; /* Reduzido */
     border-left: 4px solid var(--accent-red);
 }
 
@@ -250,10 +260,10 @@ img {
 .quote-card {
     background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
     color: var(--neutral-white);
-    padding: 25px;
+    padding: 20px; /* Reduzido */
     border-radius: 10px;
     text-align: center;
-    margin: 25px 0;
+    margin: 20px 0; /* Reduzido */
 }
 
 /* ===== DEPOIMENTOS ===== */
@@ -282,7 +292,7 @@ img {
     background: rgba(255,255,255,0.2);
     padding: 20px;
     border-radius: 10px;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 20px auto; /* Reduzido */
     max-width: 600px;
     font-size: 1.1em;
 }
@@ -291,17 +301,17 @@ img {
     font-style: italic;
     font-size: 1.2em;
     max-width: 700px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 25px auto; /* Reduzido */
     line-height: 1.6;
 }
 
 /* ===== BOTÕES ===== */
 .button-group {
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduzido */
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 25px 0; /* Reduzido */
 }
 
 .btn {
@@ -337,7 +347,7 @@ img {
 .footer {
     background: var(--primary-dark);
     color: white;
-    padding: 30px 0;
+    padding: 25px 0; /* Reduzido */
     text-align: center;
 }
 
@@ -359,7 +369,7 @@ img {
 @media (max-width: 968px) {
     .grid-sidebar {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px; /* Reduzido */
     }
     
     .service-menu {
@@ -385,7 +395,7 @@ img {
     .button-group {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 12px; /* Reduzido */
     }
     
     .btn {
@@ -394,11 +404,11 @@ img {
     }
     
     .section {
-        padding: 40px 0;
+        padding: 30px 0; /* Reduzido */
     }
     
     .card, .objective-card {
-        padding: 25px 20px;
+        padding: 20px 15px; /* Reduzido */
     }
     
     .nav-link {
@@ -422,5 +432,9 @@ img {
     
     .objective-card p {
         font-size: 1em;
+    }
+    
+    .hero {
+        padding: 40px 15px; /* Reduzido para mobile */
     }
 }
