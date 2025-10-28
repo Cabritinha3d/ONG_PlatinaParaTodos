@@ -3,101 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Mentoria - Platina Para Todos</title>
+    <title>Mentoria - Platina Para Todos</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .form-container { 
-            max-width: 700px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-        }
-        .form-card { 
-            background: white; 
-            padding: 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            margin-top: 20px;
-        }
-        .form-group { 
-            margin-bottom: 25px; 
-        }
-        label { 
-            display: block; 
-            margin-bottom: 8px; 
-            color: var(--primary-dark); 
-            font-weight: bold;
-            font-size: 1em;
-        }
-        input, select, textarea { 
-            width: 100%; 
-            padding: 12px 15px; 
-            border: 2px solid #bdc3c7; 
-            border-radius: 8px; 
-            font-size: 1em; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-sizing: border-box;
-            transition: all 0.3s;
-        }
-        input:focus, select:focus, textarea:focus { 
-            border-color: var(--accent-red); 
-            outline: none; 
-            box-shadow: 0 0 5px rgba(233, 69, 96, 0.3);
-        }
-        .submit-btn { 
-            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
-            color: white; 
-            padding: 16px 30px; 
-            border: none; 
-            border-radius: 25px; 
-            font-size: 1.1em; 
-            cursor: pointer; 
-            width: 100%; 
-            font-weight: bold;
-            margin-top: 10px;
-            transition: all 0.3s;
-        }
-        .submit-btn:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
-        }
-        .required::after {
-            content: " *";
-            color: var(--accent-red);
-        }
-        .info-box {
-            background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
-            color: white;
+        .mentoria-card {
+            background: white;
             padding: 30px;
             border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-left: 5px solid var(--accent-red);
         }
-        .back-btn {
-            background: var(--accent-blue);
+        .mentor-card {
+            background: var(--primary-dark);
             color: white;
-            padding: 12px 25px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        .processo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .processo-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid;
+            transition: all 0.3s;
+        }
+        .processo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .mentores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .cta-btn {
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            padding: 18px 35px;
             border-radius: 25px;
             text-decoration: none;
-            display: inline-block;
             font-weight: bold;
+            display: inline-block;
+            margin: 15px;
+            font-size: 1.2em;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
         }
-        .back-btn:hover {
-            background: var(--accent-red);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
         }
-        .success-box {
-            background: linear-gradient(135deg, #28a745, #20c997);
+        .mentoria-hero {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 25px;
-            border-left: 4px solid #155724;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
         }
     </style>
 </head>
@@ -105,95 +83,115 @@
 
     <!-- HEADER -->
     <header class="hero" style="padding: 80px 20px; min-height: auto;">
-        <h1 class="hero-title">🎮 PLATINA PARA TODOS</h1>
-        <p class="hero-subtitle">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
+        <h1 class="hero-title">🎯 MENTORIA INDIVIDUAL</h1>
+        <p class="hero-subtitle">✨ "Aprenda com quem já passou pela frustração!" ✨</p>
+        <div class="hero-tagline">
+            <p>🎯 <strong>Mentores Experientes</strong> | ⏱️ <strong>Horários Flexíveis</strong> | 🏆 <strong>Resultados Garantidos</strong></p>
+        </div>
     </header>
 
     <!-- NAVEGAÇÃO -->
     <nav class="nav-main">
         <a href="index.html" class="nav-link">🏠 VOLTAR PARA HOME</a>
-        <a href="#formulario" class="nav-link">📝 FORMULÁRIO</a>
+        <a href="#como-funciona" class="nav-link">❓ COMO FUNCIONA</a>
+        <a href="#mentores" class="nav-link">👨‍🏫 MENTORES</a>
+        <a href="#agendar" class="nav-link">📅 AGENDAR</a>
     </nav>
 
-    <!-- FORMULÁRIO -->
-    <section id="formulario" class="section section-light">
-        <div class="form-container">
-            <div class="info-box">
-                <h2 style="margin: 0 0 15px 0; font-size: 2em;">🎯 SOLICITAR MENTORIA</h2>
-                <p style="margin: 0; font-size: 1.2em;">Preencha o formulário e entraremos em contato em até 24h!</p>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="section section-light">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <div class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">O que é a Mentoria Individual?</h2>
+                <p style="font-size: 1.3em; line-height: 1.6; color: var(--primary-dark); margin: 0; text-align: center;">
+                    Acompanhamento <strong>personalizado 1-on-1</strong> com gamers experientes que já platinaram os jogos que você quer conquistar. 
+                    Não é apenas sobre dicas, é sobre <strong>estratégia, paciência e mentalidade</strong>!
+                </p>
             </div>
-            
-            <div class="form-card">
-                <form action="https://formsubmit.co/misscabritas2@gmail.com" method="POST">
-                    <!-- Campos hidden do FormSubmit -->
-                    <input type="hidden" name="_next" value="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/formobrigado.html">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nova solicitação de mentoria - Platina Para Todos">
-                    
-                    <!-- Nome -->
-                    <div class="form-group">
-                        <label for="nome" class="required">👤 Seu Nome (ou apelido):</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Ex: GameMaster123">
-                    </div>
-                    
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="required">📧 Seu Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
-                    </div>
-                    
-                    <!-- Jogo -->
-                    <div class="form-group">
-                        <label for="jogo" class="required">🎮 Jogo que precisa de ajuda:</label>
-                        <input type="text" id="jogo" name="jogo" required placeholder="Ex: Elden Ring, Sekiro, Cuphead...">
-                    </div>
-                    
-                    <!-- Plataforma -->
-                    <div class="form-group">
-                        <label for="plataforma" class="required">💻 Plataforma:</label>
-                        <select id="plataforma" name="plataforma" required>
-                            <option value="" disabled selected>Selecione sua plataforma...</option>
-                            <option value="ps5">PlayStation 5</option>
-                            <option value="ps4">PlayStation 4</option>
-                            <option value="xbox">Xbox Series X/S</option>
-                            <option value="pc">PC</option>
-                            <option value="nintendo">Nintendo Switch</option>
-                            <option value="outra">Outra</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Dificuldade -->
-                    <div class="form-group">
-                        <label for="dificuldade" class="required">🔥 Nível de Dificuldade:</label>
-                        <select id="dificuldade" name="dificuldade" required>
-                            <option value="" disabled selected>Selecione seu nível...</option>
-                            <option value="iniciante">🐣 Iniciante - Primeira vez no jogo</option>
-                            <option value="intermediario">🎯 Intermediário - Já joguei mas travei</option>
-                            <option value="avancado">💀 Avançado - Só falta os troféus difíceis</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Mensagem -->
-                    <div class="form-group">
-                        <label for="mensagem" class="required">💬 Conte-nos sobre seu desafio:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Ex: Estou travado no chefe Malenia há 2 semanas, preciso de dicas de esquiva e build..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">🚀 SOLICITAR MENTORIA GRATUITA</button>
-                </form>
+
+            <!-- COMO FUNCIONA -->
+            <div id="como-funciona" class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">🎯 COMO FUNCIONA</h2>
                 
-                <div class="success-box">
-                    <p style="margin: 0; font-size: 0.95em;"><strong>💡 Como funciona:</strong> Nossos mentores entram em contato por email para combinar os melhores horários. Atendimento 100% gratuito!</p>
-                </div>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <p style="color: #7f8c8d; font-size: 0.9em; margin: 0;">Campos marcados com <span style="color: var(--accent-red);">*</span> são obrigatórios</p>
-                </div>
-
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="index.html" class="back-btn">← Voltar para Home</a>
+                <div class="processo-grid">
+                    <div class="processo-item" style="border-top-color: var(--accent-red);">
+                        <h3 style="color: var(--accent-red); margin: 0 0 15px 0; font-size: 1.3em;">1. ESCOLHA SEU JOGO</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Nos conte qual jogo está travando e quais troféus precisa</p>
+                    </div>
+                    <div class="processo-item" style="border-top-color: var(--accent-blue);">
+                        <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.3em;">2. ENCONTRE SEU MENTOR</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Conectamos você com experts no seu jogo específico</p>
+                    </div>
+                    <div class="processo-item" style="border-top-color: var(--accent-orange);">
+                        <h3 style="color: var(--accent-orange); margin: 0 0 15px 0; font-size: 1.3em;">3. PLATINE!</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Sessões ao vivo, dicas personalizadas e suporte contínuo</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- MENTORES -->
+            <div id="mentores" class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">👨‍🏫 NOSSOS MENTORES</h2>
+                
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <p style="font-size: 1.2em; color: var(--primary-dark);">Gamers verificados que já platinaram +10 jogos</p>
+                </div>
+
+                <div class="mentores-grid">
+                    <!-- Primeira Linha -->
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-orange); margin: 0 0 12px 0; font-size: 1.3em;">Vovo Gamer</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Especialista em Atari e tudo que veio depois"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 25 jogos platinados | ⏱️ 3 anos de mentoria</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-red); margin: 0 0 12px 0; font-size: 1.3em;">Cururuut</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Mestre em ser mestre em RPG"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 18 jogos platinados | ⏱️ 2 anos de mentoria</p>
+                    </div>
+
+                    <!-- Segunda Linha - Fundadores da ONG -->
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-blue); margin: 0 0 12px 0; font-size: 1.3em;">Miss Cabrita</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Especialista em controle da raiva"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 15 jogos platinados | 🎮 Controles: 0 quebrados</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-purple); margin: 0 0 12px 0; font-size: 1.3em;">Miriam Mori</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Formada em descobrimento de mistérios"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 22 jogos platinados | ⏳ Mestre em tutoriais</p>
+                    </div>
+
+                    <!-- Terceira Linha -->
+                    <div class="mentor-card">
+                        <h3 style="color: #1abc9c; margin: 0 0 12px 0; font-size: 1.3em;">Big, o Estrategista</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Calculista de estratégias complexas"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 30 jogos platinados | 📊 Mestre em otimização</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: #e67e22; margin: 0 0 12px 0; font-size: 1.3em;">Monge Zangão</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Terapeuta do rage quit"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 12 jogos platinados | 🧘‍♂️ Especialista em especialidades</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGENDAR -->
+            <div id="agendar" class="mentoria-hero">
+                <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">📅 AGENDE SUA MENTORIA</h2>
+                <p style="margin: 0 0 30px 0; font-size: 1.2em;">Sessões gratuitas em diversos horários</p>
+                
+                <a href="cadastro.html" class="cta-btn">
+                    🎮 QUERO MINHA MENTORIA GRATUITA
+                </a>
+                
+                <p style="margin: 25px 0 0 0; font-size: 1em; opacity: 0.9;">
+                    Ou entre no nosso <a href="discord.html" style="color: white; font-weight: bold;">Discord</a> para conversar com a comunidade
+                </p>
+            </div>
+
         </div>
     </section>
 
