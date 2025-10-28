@@ -58,10 +58,62 @@ body {
 
 /* ===== COMPONENTES ===== */
 
-/* ===== HEADER/HERO ===== */
+/* ===== HERO COM IMAGEM DE FUNDO ===== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('../imgs/sobre0.jpeg') center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-tagline {
+    font-size: 1.2em;
+    background: rgba(233, 69, 96, 0.8);
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+/* ===== CARD OBJETIVO ===== */
+.objective-card {
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: none;
+}
+
+.objective-card h2 {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.objective-card p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* NAVEGAÇÃO */
