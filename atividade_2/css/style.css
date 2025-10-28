@@ -74,3 +74,11 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* Tamanhos Imagem */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
