@@ -4,155 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentoria - Platina Para Todos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mentoria-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-red);
+        }
+        .mentor-card {
+            background: var(--primary-dark);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        .processo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .processo-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid;
+            transition: all 0.3s;
+        }
+        .processo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .mentores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .cta-btn {
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            padding: 18px 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 15px;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.3);
+        }
+        .mentoria-hero {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0;">
-    <!-- Banner -->
-    <header style="text-align: center; background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8)), url('imgs/banner.jpeg'); background-size: cover; background-position: center; color: white; padding: 30px 20px;">
-        <h1 style="margin: 0 0 12px 0; font-size: 2.2em;">🎮 MENTORIA INDIVIDUAL</h1>
-        <p style="margin: 0 0 15px 0; font-size: 1.1em; max-width: 600px; margin-left: auto; margin-right: auto;">✨ "Aprenda com quem já passou pela frustração!" ✨</p>
-        <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; display: inline-block;">
-            <p style="margin: 0; font-size: 1em;">
-                🎯 <strong>Mentores Experientes</strong> | 
-                ⏱️ <strong>Horários Flexíveis</strong> | 
-                🏆 <strong>Resultados Garantidos</strong>
-            </p>
+<body>
+
+    <!-- HEADER -->
+    <header class="hero" style="padding: 80px 20px; min-height: auto;">
+        <h1 class="hero-title">🎯 MENTORIA INDIVIDUAL</h1>
+        <p class="hero-subtitle">✨ "Aprenda com quem já passou pela frustração!" ✨</p>
+        <div class="hero-tagline">
+            <p>🎯 <strong>Mentores Experientes</strong> | ⏱️ <strong>Horários Flexíveis</strong> | 🏆 <strong>Resultados Garantidos</strong></p>
         </div>
     </header>
 
-    <!-- Menu -->
-    <nav style="text-align: center; background: #2c3e50; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-        <a href="index.html" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">🏠 INÍCIO</a>
-        <a href="#como-funciona" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">❓ COMO FUNCIONA</a>
-        <a href="#mentores" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">👨‍🏫 MENTORES</a>
-        <a href="#agendar" style="color: white; margin: 0 12px; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px;">📅 AGENDAR</a>
+    <!-- NAVEGAÇÃO -->
+    <nav class="nav-main">
+        <a href="index.html" class="nav-link">🏠 VOLTAR PARA HOME</a>
+        <a href="#como-funciona" class="nav-link">❓ COMO FUNCIONA</a>
+        <a href="#mentores" class="nav-link">👨‍🏫 MENTORES</a>
+        <a href="#agendar" class="nav-link">📅 AGENDAR</a>
     </nav>
 
-    <!-- Conteúdo Principal -->
-    <section style="padding: 40px 20px; background: #ecf0f1;">
-        <div style="max-width: 1000px; margin: 0 auto;">
-            
-            <!-- Introdução -->
-            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 30px; border-left: 5px solid #e74c3c;">
-                <h2 style="color: #e74c3c; margin: 0 0 15px 0;">O que é a Mentoria Individual?</h2>
-                <p style="font-size: 1.1em; line-height: 1.6; color: #2c3e50; margin: 0;">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="section section-light">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <div class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">O que é a Mentoria Individual?</h2>
+                <p style="font-size: 1.3em; line-height: 1.6; color: var(--primary-dark); margin: 0; text-align: center;">
                     Acompanhamento <strong>personalizado 1-on-1</strong> com gamers experientes que já platinaram os jogos que você quer conquistar. 
                     Não é apenas sobre dicas, é sobre <strong>estratégia, paciência e mentalidade</strong>!
                 </p>
             </div>
 
-            <!-- Como Funciona -->
-            <div id="como-funciona" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 30px;">
-                <h2 style="color: #2c3e50; margin: 0 0 25px 0; text-align: center;">🎯 COMO FUNCIONA</h2>
+            <!-- COMO FUNCIONA -->
+            <div id="como-funciona" class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">🎯 COMO FUNCIONA</h2>
                 
-                <table width="100%" cellpadding="15" cellspacing="15">
-                    <tr>
-                        <td width="33%" valign="top" style="text-align: center;">
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-top: 4px solid #e74c3c;">
-                                <h3 style="color: #e74c3c; margin: 0 0 10px 0;">1. ESCOLHA SEU JOGO</h3>
-                                <p style="margin: 0; color: #2c3e50;">Nos conte qual jogo está travando e quais troféus precisa</p>
-                            </div>
-                        </td>
-                        <td width="33%" valign="top" style="text-align: center;">
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-top: 4px solid #3498db;">
-                                <h3 style="color: #3498db; margin: 0 0 10px 0;">2. ENCONTRE SEU MENTOR</h3>
-                                <p style="margin: 0; color: #2c3e50;">Conectamos você com experts no seu jogo específico</p>
-                            </div>
-                        </td>
-                        <td width="33%" valign="top" style="text-align: center;">
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-top: 4px solid #f39c12;">
-                                <h3 style="color: #f39c12; margin: 0 0 10px 0;">3. PLATINE!</h3>
-                                <p style="margin: 0; color: #2c3e50;">Sessões ao vivo, dicas personalizadas e suporte contínuo</p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <div class="processo-grid">
+                    <div class="processo-item" style="border-top-color: var(--accent-red);">
+                        <h3 style="color: var(--accent-red); margin: 0 0 15px 0; font-size: 1.3em;">1. ESCOLHA SEU JOGO</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Nos conte qual jogo está travando e quais troféus precisa</p>
+                    </div>
+                    <div class="processo-item" style="border-top-color: var(--accent-blue);">
+                        <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.3em;">2. ENCONTRE SEU MENTOR</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Conectamos você com experts no seu jogo específico</p>
+                    </div>
+                    <div class="processo-item" style="border-top-color: var(--accent-orange);">
+                        <h3 style="color: var(--accent-orange); margin: 0 0 15px 0; font-size: 1.3em;">3. PLATINE!</h3>
+                        <p style="margin: 0; color: var(--primary-dark); line-height: 1.6;">Sessões ao vivo, dicas personalizadas e suporte contínuo</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Mentores -->
-            <div id="mentores" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 30px;">
-                <h2 style="color: #2c3e50; margin: 0 0 25px 0; text-align: center;">👨‍🏫 NOSSOS MENTORES</h2>
+            <!-- MENTORES -->
+            <div id="mentores" class="mentoria-card">
+                <h2 class="title-badge" style="background: var(--accent-red);">👨‍🏫 NOSSOS MENTORES</h2>
                 
-                <div style="text-align: center; margin-bottom: 25px;">
-                    <p style="font-size: 1.1em; color: #7f8c8d;">Gamers verificados que já platinaram +10 jogos</p>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <p style="font-size: 1.2em; color: var(--primary-dark);">Gamers verificados que já platinaram +10 jogos</p>
                 </div>
 
-                <table width="100%" cellpadding="15" cellspacing="15">
-                    <tr>
-                        <!-- Primeira Linha -->
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #f39c12; margin: 0 0 10px 0;">Vovo Gamer</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Especialista em Atari e tudo que veio depois"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 25 jogos platinados | ⏱️ 3 anos de mentoria</p>
-                            </div>
-                        </td>
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #e74c3c; margin: 0 0 10px 0;">Cururuut</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Mestre em ser mestre em RPG"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 18 jogos platinados | ⏱️ 2 anos de mentoria</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Segunda Linha - Fundadores da ONG -->
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #3498db; margin: 0 0 10px 0;">Miss Cabrita</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Especialista em controle da raiva"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 15 jogos platinados | 🎮 Controles: 0 quebrados</p>
-                            </div>
-                        </td>
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #9b59b6; margin: 0 0 10px 0;">Miriam Mori</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Formada em descobrimento de mistérios"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 22 jogos platinados | ⏳ Mestre em tutoriais</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Terceira Linha -->
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #1abc9c; margin: 0 0 10px 0;">Big, o Estrategista</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Calculista de estratégias complexas"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 30 jogos platinados | 📊 Mestre em otimização</p>
-                            </div>
-                        </td>
-                        <td width="50%" valign="top">
-                            <div style="background: #34495e; color: white; padding: 25px; border-radius: 10px; text-align: center;">
-                                <h3 style="color: #e67e22; margin: 0 0 10px 0;">Monge Zangão</h3>
-                                <p style="margin: 0 0 15px 0; font-style: italic;">"Terapeuta do rage quit"</p>
-                                <p style="margin: 0; font-size: 0.9em;">🏆 12 jogos platinados | 🧘‍♂️ Especialista em especialidades</p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <div class="mentores-grid">
+                    <!-- Primeira Linha -->
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-orange); margin: 0 0 12px 0; font-size: 1.3em;">Vovo Gamer</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Especialista em Atari e tudo que veio depois"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 25 jogos platinados | ⏱️ 3 anos de mentoria</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-red); margin: 0 0 12px 0; font-size: 1.3em;">Cururuut</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Mestre em ser mestre em RPG"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 18 jogos platinados | ⏱️ 2 anos de mentoria</p>
+                    </div>
+
+                    <!-- Segunda Linha - Fundadores da ONG -->
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-blue); margin: 0 0 12px 0; font-size: 1.3em;">Miss Cabrita</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Especialista em controle da raiva"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 15 jogos platinados | 🎮 Controles: 0 quebrados</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: var(--accent-purple); margin: 0 0 12px 0; font-size: 1.3em;">Miriam Mori</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Formada em descobrimento de mistérios"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 22 jogos platinados | ⏳ Mestre em tutoriais</p>
+                    </div>
+
+                    <!-- Terceira Linha -->
+                    <div class="mentor-card">
+                        <h3 style="color: #1abc9c; margin: 0 0 12px 0; font-size: 1.3em;">Big, o Estrategista</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Calculista de estratégias complexas"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 30 jogos platinados | 📊 Mestre em otimização</p>
+                    </div>
+                    <div class="mentor-card">
+                        <h3 style="color: #e67e22; margin: 0 0 12px 0; font-size: 1.3em;">Monge Zangão</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; font-size: 1.1em;">"Terapeuta do rage quit"</p>
+                        <p style="margin: 0; font-size: 0.95em;">🏆 12 jogos platinados | 🧘‍♂️ Especialista em especialidades</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Agendar -->
-<div id="agendar" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
-    <h2 style="color: #2c3e50; margin: 0 0 15px 0;">📅 AGENDE SUA MENTORIA</h2>
-    <p style="font-size: 1.1em; color: #7f8c8d; margin: 0 0 25px 0;">Sessões gratuitas em diversos horários</p>
-    
-    <a href="cadastro.html" style="background: #e74c3c; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-size: 1.1em; font-weight: bold; display: inline-block; margin: 10px;">
-        🎮 QUERO MINHA MENTORIA GRATUITA
-    </a>
-    
-    <p style="font-size: 0.9em; color: #bdc3c7; margin: 20px 0 0 0;">
-        Ou entre no nosso <a href="discord.html" style="color: #3498db;">Discord</a> para conversar com a comunidade
-    </p>
-</div>
+            <!-- AGENDAR -->
+            <div id="agendar" class="mentoria-hero">
+                <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">📅 AGENDE SUA MENTORIA</h2>
+                <p style="margin: 0 0 30px 0; font-size: 1.2em;">Sessões gratuitas em diversos horários</p>
+                
+                <a href="cadastro.html" class="cta-btn">
+                    🎮 QUERO MINHA MENTORIA GRATUITA
+                </a>
+                
+                <p style="margin: 25px 0 0 0; font-size: 1em; opacity: 0.9;">
+                    Ou entre no nosso <a href="discord.html" style="color: white; font-weight: bold;">Discord</a> para conversar com a comunidade
+                </p>
+            </div>
 
-    <!-- Rodapé -->
-    <footer style="background: #1a252f; color: white; padding: 20px; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <p style="margin: 0 0 8px 0; font-size: 0.9em;">misscabritas2@gmail.com</p>
-            <p style="margin: 0; font-size: 0.8em; color: #bdc3c7;">Platina Para Todos &copy; 2007</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="https://discord.gg/EXEMPLO" target="_blank" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2024</p>
         </div>
     </footer>
-    
-</body>
 
+</body>
 </html>
