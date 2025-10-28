@@ -58,33 +58,10 @@ body {
 
 /* ===== COMPONENTES ===== */
 
-/* HEADER/HERO */
+/* ===== HEADER/HERO ===== */
 .hero {
-    background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    margin-bottom: 0;
-}
-
-.hero-title {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.hero-subtitle {
-    font-size: 1.3em;
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
-
-.hero-tagline {
-    font-size: 1.1em;
-    background: rgba(255,255,255,0.1);
-    padding: 15px;
-    border-radius: 10px;
-    display: inline-block;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('../imgs/sobre0.jpeg') center/cover;
 }
 
 /* NAVEGAÇÃO */
