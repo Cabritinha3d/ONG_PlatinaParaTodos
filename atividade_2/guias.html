@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos - Platina Para Todos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .group-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-orange);
+        }
+        .group-stats {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 3px solid var(--accent-orange);
+        }
+        .join-btn {
+            background: var(--accent-orange);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .join-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+        }
+        .group-hero {
+            background: linear-gradient(135deg, var(--accent-orange), #e67e22);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="hero" style="padding: 80px 20px; min-height: auto;">
+        <h1 class="hero-title">👥 GRUPOS DE APOIO</h1>
+        <p class="hero-subtitle">✨ "Juntos somos mais fortes que qualquer chefe!" ✨</p>
+        <div class="hero-tagline">
+            <p>👥 <strong>Comunidades Ativas</strong> | 🤝 <strong>Ajuda em Grupo</strong> | 🎯 <strong>Foco Específico</strong></p>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="nav-main">
+        <a href="index.html" class="nav-link">🏠 VOLTAR PARA HOME</a>
+        <a href="#from-software" class="nav-link">🗡️ FROM SOFTWARE</a>
+        <a href="#co-op" class="nav-link">👥 CO-OP</a>
+        <a href="#rpg" class="nav-link">📚 RPGs</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="section section-light">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <div class="group-card">
+                <h2 class="title-badge" style="background: var(--accent-orange);">O que são os Grupos de Apoio?</h2>
+                <p style="font-size: 1.2em; line-height: 1.6; color: var(--primary-dark); margin: 0; text-align: center;">
+                    Comunidades especializadas por <strong>gênero de jogo</strong> onde gamers se reúnem para trocar experiências, 
+                    formar grupos de co-op e superar desafios <strong>juntos</strong>. Aqui ninguém joga sozinho!
+                </p>
+            </div>
+
+            <!-- GRUPO FROM SOFTWARE -->
+            <div id="from-software" class="group-card">
+                <h2 style="color: var(--accent-red); margin: 0 0 20px 0; font-size: 1.8em;">🗡️ GRUPO FROM SOFTWARE</h2>
+                <p style="color: var(--primary-dark); margin: 0 0 20px 0; font-size: 1.2em; line-height: 1.6;">
+                    <strong>Para os corajosos que não temem morrer 100+ vezes!</strong> Comunidade dedicada aos jogos da From Software.
+                </p>
+                
+                <div class="group-stats">
+                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>🎮 Jogos do grupo:</strong> Dark Souls Trilogy, Bloodborne, Sekiro, Elden Ring, Demon's Souls</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>👥 Membros ativos:</strong> 350+ gamers</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>🏆 Conquistas coletivas:</strong> 1.200+ platinas</p>
+                </div>
+
+                <h3 style="color: var(--accent-red); margin: 25px 0 15px 0; font-size: 1.3em;">💬 O que rola no grupo:</h3>
+                <ul style="color: var(--primary-dark); margin: 0 0 25px 0; padding-left: 25px; line-height: 1.8; font-size: 1.1em;">
+                    <li>Guias de builds eficientes</li>
+                    <li>Dicas de chefes específicos</li>
+                    <li>Grupos para co-op (jolly cooperation!)</li>
+                    <li>Eventos semanais de PvP</li>
+                    <li>Suporte emocional pós-morte</li>
+                </ul>
+
+                <a href="discord.html" class="join-btn">👥 ENTRAR NO GRUPO</a>
+            </div>
+
+            <!-- GRUPO CO-OP -->
+            <div id="co-op" class="group-card">
+                <h2 style="color: var(--accent-blue); margin: 0 0 20px 0; font-size: 1.8em;">👥 GRUPO COOPERATIVO</h2>
+                <p style="color: var(--primary-dark); margin: 0 0 20px 0; font-size: 1.2em; line-height: 1.6;">
+                    <strong>Encontre sua dupla perfeita!</strong> Para jogos que são melhores com amigos.
+                </p>
+                
+                <div class="group-stats">
+                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>🎮 Jogos do grupo:</strong> It Takes Two, Overcooked, A Way Out, Deep Rock Galactic, Monster Hunter</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>👥 Membros ativos:</strong> 280+ gamers</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>🤝 Parcerias formadas:</strong> 150+ duplas</p>
+                </div>
+
+                <h3 style="color: var(--accent-blue); margin: 25px 0 15px 0; font-size: 1.3em;">💬 O que rola no grupo:</h3>
+                <ul style="color: var(--primary-dark); margin: 0 0 25px 0; padding-left: 25px; line-height: 1.8; font-size: 1.1em;">
+                    <li>Encontro de parceiros de jogo</li>
+                    <li>Estratégias para troféus em co-op</li>
+                    <li>Noites de jogatina em grupo</li>
+                    <li>Dicas para comunicação eficiente</li>
+                    <li>Salvamento de relacionamentos (literalmente!)</li>
+                </ul>
+
+                <a href="discord.html" class="join-btn">👥 ENTRAR NO GRUPO</a>
+            </div>
+
+            <!-- GRUPO RPG -->
+            <div id="rpg" class="group-card">
+                <h2 style="color: var(--accent-purple); margin: 0 0 20px 0; font-size: 1.8em;">📚 GRUPO RPG</h2>
+                <p style="color: var(--primary-dark); margin: 0 0 20px 0; font-size: 1.2em; line-height: 1.6;">
+                    <strong>Para os amantes de histórias épicas e mundos vastos!</strong> RPGs de todos os tipos.
+                </p>
+                
+                <div class="group-stats">
+                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>🎮 Jogos do grupo:</strong> The Witcher, Skyrim, Final Fantasy, Persona, Baldur's Gate, Mass Effect</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>👥 Membros ativos:</strong> 420+ gamers</p>
+                    <p style="margin: 10px 0 0 0; color: var(--primary-dark); font-size: 1.1em;"><strong>⏱️ Horas coletivas:</strong> 50.000+ horas</p>
+                </div>
+
+                <h3 style="color: var(--accent-purple); margin: 25px 0 15px 0; font-size: 1.3em;">💬 O que rola no grupo:</h3>
+                <ul style="color: var(--primary-dark); margin: 0 0 25px 0; padding-left: 25px; line-height: 1.8; font-size: 1.1em;">
+                    <li>Rotas eficientes de platinha</li>
+                    <li>Localização de itens secretos</li>
+                    <li>Discussões de lore e histórias</li>
+                    <li>Guias de side quests obrigatórias</li>
+                    <li>Suporte para jogos de 100+ horas</li>
+                </ul>
+
+                <a href="discord.html" class="join-btn">👥 ENTRAR NO GRUPO</a>
+            </div>
+
+            <!-- CALL TO ACTION -->
+            <div class="group-hero">
+                <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">🚀 PRONTO PARA SE JUNTAR A NÓS?</h2>
+                <p style="margin: 0 0 30px 0; font-size: 1.2em;">Todos os grupos estão no nosso Discord! Escolha seu favorito e clique em "Entrar no Grupo"</p>
+                <a href="discord.html" class="join-btn" style="background: var(--primary-dark);">
+                    💬 ACESSAR DISCORD
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="https://discord.gg/EXEMPLO" target="_blank" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2024</p>
+        </div>
+    </footer>
+
+</body>
+</html>
