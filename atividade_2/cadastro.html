@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Mentoria - Platina Para Todos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-container { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        .form-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            margin-top: 20px;
+        }
+        .form-group { 
+            margin-bottom: 25px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            color: var(--primary-dark); 
+            font-weight: bold;
+            font-size: 1em;
+        }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 12px 15px; 
+            border: 2px solid #bdc3c7; 
+            border-radius: 8px; 
+            font-size: 1em; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+        input:focus, select:focus, textarea:focus { 
+            border-color: var(--accent-red); 
+            outline: none; 
+            box-shadow: 0 0 5px rgba(233, 69, 96, 0.3);
+        }
+        .submit-btn { 
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
+            color: white; 
+            padding: 16px 30px; 
+            border: none; 
+            border-radius: 25px; 
+            font-size: 1.1em; 
+            cursor: pointer; 
+            width: 100%; 
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+        }
+        .required::after {
+            content: " *";
+            color: var(--accent-red);
+        }
+        .info-box {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .back-btn {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .back-btn:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .success-box {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid #155724;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="hero" style="padding: 80px 20px; min-height: auto;">
+        <h1 class="hero-title">🎮 PLATINA PARA TODOS</h1>
+        <p class="hero-subtitle">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="nav-main">
+        <a href="index.html" class="nav-link">🏠 VOLTAR PARA HOME</a>
+        <a href="#formulario" class="nav-link">📝 FORMULÁRIO</a>
+    </nav>
+
+    <!-- FORMULÁRIO -->
+    <section id="formulario" class="section section-light">
+        <div class="form-container">
+            <div class="info-box">
+                <h2 style="margin: 0 0 15px 0; font-size: 2em;">🎯 SOLICITAR MENTORIA</h2>
+                <p style="margin: 0; font-size: 1.2em;">Preencha o formulário e entraremos em contato em até 24h!</p>
+            </div>
+            
+            <div class="form-card">
+                <form action="https://formsubmit.co/misscabritas2@gmail.com" method="POST">
+                    <!-- Campos hidden do FormSubmit -->
+                    <input type="hidden" name="_next" value="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/formobrigado.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nova solicitação de mentoria - Platina Para Todos">
+                    
+                    <!-- Nome -->
+                    <div class="form-group">
+                        <label for="nome" class="required">👤 Seu Nome (ou apelido):</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Ex: GameMaster123">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="required">📧 Seu Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                    </div>
+                    
+                    <!-- Jogo -->
+                    <div class="form-group">
+                        <label for="jogo" class="required">🎮 Jogo que precisa de ajuda:</label>
+                        <input type="text" id="jogo" name="jogo" required placeholder="Ex: Elden Ring, Sekiro, Cuphead...">
+                    </div>
+                    
+                    <!-- Plataforma -->
+                    <div class="form-group">
+                        <label for="plataforma" class="required">💻 Plataforma:</label>
+                        <select id="plataforma" name="plataforma" required>
+                            <option value="" disabled selected>Selecione sua plataforma...</option>
+                            <option value="ps5">PlayStation 5</option>
+                            <option value="ps4">PlayStation 4</option>
+                            <option value="xbox">Xbox Series X/S</option>
+                            <option value="pc">PC</option>
+                            <option value="nintendo">Nintendo Switch</option>
+                            <option value="outra">Outra</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Dificuldade -->
+                    <div class="form-group">
+                        <label for="dificuldade" class="required">🔥 Nível de Dificuldade:</label>
+                        <select id="dificuldade" name="dificuldade" required>
+                            <option value="" disabled selected>Selecione seu nível...</option>
+                            <option value="iniciante">🐣 Iniciante - Primeira vez no jogo</option>
+                            <option value="intermediario">🎯 Intermediário - Já joguei mas travei</option>
+                            <option value="avancado">💀 Avançado - Só falta os troféus difíceis</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Mensagem -->
+                    <div class="form-group">
+                        <label for="mensagem" class="required">💬 Conte-nos sobre seu desafio:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Ex: Estou travado no chefe Malenia há 2 semanas, preciso de dicas de esquiva e build..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">🚀 SOLICITAR MENTORIA GRATUITA</button>
+                </form>
+                
+                <div class="success-box">
+                    <p style="margin: 0; font-size: 0.95em;"><strong>💡 Como funciona:</strong> Nossos mentores entram em contato por email para combinar os melhores horários. Atendimento 100% gratuito!</p>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <p style="color: #7f8c8d; font-size: 0.9em; margin: 0;">Campos marcados com <span style="color: var(--accent-red);">*</span> são obrigatórios</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="index.html" class="back-btn">← Voltar para Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="https://discord.gg/EXEMPLO" target="_blank" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2024</p>
+        </div>
+    </footer>
+
+</body>
+</html>
