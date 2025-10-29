@@ -1,113 +1,155 @@
-<!-- pages/formobrigado.html -->
-<section class="section section-light">
-    <div class="container">
-        <div class="thank-you-container">
-            <div class="success-card">
-                <div class="success-icon">🎉</div>
-                
-                <h2 style="color: #27ae60; margin: 0 0 15px 0; font-size: 2em;">SOLICITAÇÃO ENVIADA COM SUCESSO!</h2>
-                
-                <p style="color: #2c3e50; font-size: 1.2em; margin: 0 0 25px 0; line-height: 1.5;">
-                    <strong>Obrigado por confiar na gente!</strong> Sua solicitação de mentoria foi recebida e entraremos em contato em até <strong>24 horas</strong>.
-                </p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! - Platina Para Todos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .thank-you-container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 50px 20px; 
+        }
+        .success-card { 
+            background: white; 
+            padding: 50px 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border-top: 6px solid var(--accent-green);
+            text-align: center;
+        }
+        .success-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        .next-steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid var(--accent-blue);
+        }
+        .step {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-dark);
+        }
+        .step::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: var(--accent-red);
+            color: white;
+        }
+        .btn-secondary {
+            background: var(--accent-blue);
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Garantir que o texto seja visível */
+        .success-card,
+        .success-card * {
+            color: #2f3542 !important;
+        }
+        
+        .success-card h2 {
+            color: var(--accent-green) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <a href="../index.html" class="nav-link">🏠 INÍCIO</a>
+        <a href="home.html" class="nav-link">📖 SOBRE</a>
+        <a href="projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="discord.html" class="nav-link">💬 DISCORD</a>
+    </nav>
 
-                <div class="next-steps">
-                    <h3 style="color: #2c3e50; margin: 0 0 15px 0;">📋 O que acontece agora:</h3>
-                    
-                    <div class="step">
-                        <strong>Verificação do email</strong> - Enviamos um email de confirmação para você
-                    </div>
-                    
-                    <div class="step">
-                        <strong>Análise da sua solicitação</strong> - Nossos mentores especializados vão analisar seu caso
-                    </div>
-                    
-                    <div class="step">
-                        <strong>Contato personalizado</strong> - Um mentor entrará em contato para combinar os detalhes
-                    </div>
-                    
-                    <div class="step">
-                        <strong>Sessão de mentoria</strong> - Marcamos a sessão no horário que for melhor para você
-                    </div>
-                </div>
+    <!-- Main Content -->
+    <main>
+        <section class="section section-light">
+            <div class="container">
+                <div class="thank-you-container">
+                    <div class="success-card">
+                        <div class="success-icon">🎉</div>
+                        
+                        <h2 style="margin: 0 0 15px 0; font-size: 2em;">SOLICITAÇÃO ENVIADA COM SUCESSO!</h2>
+                        
+                        <p style="font-size: 1.2em; margin: 0 0 25px 0; line-height: 1.5;">
+                            <strong>Obrigado por confiar na gente!</strong> Sua solicitação de mentoria foi recebida e entraremos em contato em até <strong>24 horas</strong>.
+                        </p>
 
-                <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffc107;">
-                    <p style="margin: 0; font-size: 0.9em;">
-                        <strong>💡 Dica:</strong> Enquanto espera nosso contato, junte-se ao nosso 
-                        <a href="#discord" style="color: #3498db; font-weight: bold;" data-route="discord">Discord</a> para conversar com outros gamers!
-                    </p>
-                </div>
+                        <div class="next-steps">
+                            <h3 style="margin: 0 0 15px 0;">📋 O que acontece agora:</h3>
+                            
+                            <div class="step">
+                                <strong>Verificação do email</strong> - Enviamos um email de confirmação para você
+                            </div>
+                            
+                            <div class="step">
+                                <strong>Análise da sua solicitação</strong> - Nossos mentores especializados vão analisar seu caso
+                            </div>
+                            
+                            <div class="step">
+                                <strong>Contato personalizado</strong> - Um mentor entrará em contato para combinar os detalhes
+                            </div>
+                            
+                            <div class="step">
+                                <strong>Sessão de mentoria</strong> - Marcamos a sessão no horário que for melhor para você
+                            </div>
+                        </div>
 
-                <div style="margin-top: 30px;">
-                    <a href="#home" class="btn btn-primary" data-route="home">🏠 Voltar para Home</a>
-                    <a href="#discord" class="btn btn-secondary" data-route="discord">💬 Entrar no Discord</a>
-                    <a href="#guias" class="btn btn-secondary" data-route="guias">📚 Ver Guias</a>
-                </div>
+                        <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffc107;">
+                            <p style="margin: 0; font-size: 0.9em;">
+                                <strong>💡 Dica:</strong> Enquanto espera nosso contato, junte-se ao nosso 
+                                <a href="discord.html" style="color: #3498db; font-weight: bold;">Discord</a> para conversar com outros gamers!
+                            </p>
+                        </div>
 
-                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #ecf0f1;">
-                    <p style="color: #7f8c8d; margin: 0; font-size: 0.9em;">
-                        Dúvidas? <a href="mailto:misscabritas2@gmail.com" style="color: #3498db;">misscabritas2@gmail.com</a>
-                    </p>
+                        <div style="margin-top: 30px;">
+                            <a href="home.html" class="btn btn-primary">🏠 Voltar para Home</a>
+                            <a href="discord.html" class="btn btn-secondary">💬 Entrar no Discord</a>
+                            <a href="guias.html" class="btn btn-secondary">📚 Ver Guias</a>
+                        </div>
+
+                        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #ecf0f1;">
+                            <p style="color: #7f8c8d; margin: 0; font-size: 0.9em;">
+                                Dúvidas? <a href="mailto:misscabritas2@gmail.com" style="color: #3498db;">misscabritas2@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
-<style>
-    .thank-you-container { 
-        max-width: 600px; 
-        margin: 0 auto; 
-        padding: 50px 20px; 
-    }
-    .success-card { 
-        background: white; 
-        padding: 50px 40px; 
-        border-radius: 12px; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-        border-top: 6px solid #27ae60;
-    }
-    .success-icon {
-        font-size: 5em;
-        margin-bottom: 20px;
-    }
-    .next-steps {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        margin: 30px 0;
-        text-align: left;
-        border-left: 4px solid var(--accent-blue);
-    }
-    .step {
-        margin: 15px 0;
-        padding-left: 25px;
-        position: relative;
-    }
-    .step::before {
-        content: "✅";
-        position: absolute;
-        left: 0;
-    }
-    .btn {
-        display: inline-block;
-        padding: 12px 25px;
-        margin: 10px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-    .btn-primary {
-        background: var(--accent-red);
-        color: white;
-    }
-    .btn-secondary {
-        background: var(--accent-blue);
-        color: white;
-    }
-    .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-</style>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="discord.html" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2007</p>
+        </div>
+    </footer>
+</body>
+</html>
