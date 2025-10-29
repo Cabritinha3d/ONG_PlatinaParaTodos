@@ -97,6 +97,13 @@
         .spa-loaded #app {
             display: block;
         }
+
+        /* Loading styles */
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -116,37 +123,97 @@
     <div id="app"></div>
 
     <script>
-        // SPA SIMPLES - Carrega a home quando clicar no botão
-        document.getElementById('enter-site').addEventListener('click', function() {
-            // Mostra loading
-            this.textContent = '🚀 CARREGANDO...';
-            this.disabled = true;
+        // Lista de páginas válidas
+        const validPages = [
+            'home', 'projetos', 'guias', 'grupos', 'eventos', 
+            'discord', 'doacao', 'cadastro', 'formobrigado', '404'
+        ];
+
+        // Função para carregar páginas
+        function loadPage(page) {
+            const app = document.getElementById('app');
             
-            // Carrega a home.html
-            fetch('https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/home.html')
-                .then(response => response.text())
+            // Verifica se a página é válida
+            if (!validPages.includes(page)) {
+                loadPage('404');
+                return;
+            }
+
+            // Mostra loading
+            app.innerHTML = '<div class="loading">🚀 Carregando...</div>';
+            
+            fetch(`https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/${page}.html`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Página não encontrada');
+                    }
+                    return response.text();
+                })
                 .then(html => {
-                    // Insere o conteúdo na div app
-                    document.getElementById('app').innerHTML = html;
-                    
-                    // Ativa o modo SPA
-                    document.body.classList.add('spa-loaded');
-                    
-                    // Rola para o topo
+                    app.innerHTML = html;
                     window.scrollTo(0, 0);
+                    
+                    // Atualiza a URL no navegador (sem recarregar a página)
+                    window.history.pushState({}, '', `#/${page}`);
                 })
                 .catch(error => {
                     console.error('Erro ao carregar a página:', error);
-                    // Fallback: redireciona para a home
-                    window.location.href = 'https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/home.html';
+                    loadPage('404');
                 });
-        });
+        }
 
-        // Se já estiver em uma página específica (acesso direto)
-        if (window.location.hash && window.location.hash !== '#/') {
+        // Função para obter a página atual da URL
+        function getCurrentPage() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#/')) {
+                return hash.substring(2) || 'home';
+            }
+            return 'home';
+        }
+
+        // Sistema de navegação SPA
+        function handleNavigation() {
+            const currentPage = getCurrentPage();
+            loadPage(currentPage);
+            
+            // Ativa o modo SPA
             document.body.classList.add('spa-loaded');
             document.getElementById('main-banner').style.display = 'none';
             document.getElementById('app').style.display = 'block';
+        }
+
+        // Evento do botão "Comece Sua Jornada"
+        document.getElementById('enter-site').addEventListener('click', function() {
+            this.textContent = '🚀 CARREGANDO...';
+            this.disabled = true;
+            
+            // Vai para a home page
+            window.location.hash = '#/home';
+        });
+
+        // Ouvinte para mudanças na hash (navegação SPA)
+        window.addEventListener('hashchange', handleNavigation);
+
+        // Inicialização
+        window.addEventListener('DOMContentLoaded', function() {
+            // Se já tiver uma hash na URL, carrega a página correspondente
+            if (window.location.hash) {
+                handleNavigation();
+            }
+            
+            // Intercepta cliques em links para usar SPA
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a');
+                if (link && link.href && link.href.includes('#/')) {
+                    e.preventDefault();
+                    window.location.hash = new URL(link.href).hash;
+                }
+            });
+        });
+
+        // Fallback para navegação direta
+        if (window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) {
+            window.location.href = 'https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/index.html';
         }
     </script>
 </body>
