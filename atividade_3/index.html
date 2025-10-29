@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platina Para Todos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/css/style.css">
     <style>
         /* ESTILOS ESPECÍFICOS DO BANNER SPA */
         .hero-banner {
@@ -84,19 +84,70 @@
                 font-size: 1rem;
             }
         }
+
+        /* ESTILOS DO SPA */
+        #app {
+            display: none; /* Inicialmente escondido */
+        }
+
+        .spa-loaded #main-banner {
+            display: none;
+        }
+
+        .spa-loaded #app {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <!-- BANNER INICIAL SPA -->
-    <header class="hero-banner">
+    <header class="hero-banner" id="main-banner">
         <div class="banner-overlay">
             <h1 class="banner-title">🎮 PLATINA PARA TODOS</h1>
             <p class="banner-subtitle">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
             <div class="banner-tagline">
                 <p>🏆 <strong>Comunidade Gamers</strong> | 🤝 <strong>Ajuda Gratuita</strong> | 🚀 <strong>Resultados Reais</strong></p>
             </div>
-            <a href="pages/home.html" class="banner-cta">Comece Sua Jornada</a>
+            <button id="enter-site" class="banner-cta">Comece Sua Jornada</button>
         </div>
     </header>
+
+    <!-- CONTEÚDO DINÂMICO SPA -->
+    <div id="app"></div>
+
+    <script>
+        // SPA SIMPLES - Carrega a home quando clicar no botão
+        document.getElementById('enter-site').addEventListener('click', function() {
+            // Mostra loading
+            this.textContent = '🚀 CARREGANDO...';
+            this.disabled = true;
+            
+            // Carrega a home.html
+            fetch('https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/home.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Insere o conteúdo na div app
+                    document.getElementById('app').innerHTML = html;
+                    
+                    // Ativa o modo SPA
+                    document.body.classList.add('spa-loaded');
+                    
+                    // Rola para o topo
+                    window.scrollTo(0, 0);
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar a página:', error);
+                    // Fallback: redireciona para a home
+                    window.location.href = 'https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/home.html';
+                });
+        });
+
+        // Se já estiver em uma página específica (acesso direto)
+        if (window.location.hash && window.location.hash !== '#/') {
+            document.body.classList.add('spa-loaded');
+            document.getElementById('main-banner').style.display = 'none';
+            document.getElementById('app').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
