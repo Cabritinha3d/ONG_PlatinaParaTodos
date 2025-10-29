@@ -7,18 +7,41 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- BANNER INICIAL SIMPLES -->
-    <header class="hero-banner">
+    <!-- BANNER INICIAL -->
+    <header class="hero-banner" id="main-banner">
         <div class="banner-overlay">
             <h1 class="banner-title">🎮 PLATINA PARA TODOS</h1>
             <p class="banner-subtitle">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
             <div class="banner-tagline">
                 <p>🏆 <strong>Comunidade Gamers</strong> | 🤝 <strong>Ajuda Gratuita</strong> | 🚀 <strong>Resultados Reais</strong></p>
             </div>
-            <a href="pages/home.html" class="banner-cta">Comece Sua Jornada</a>
+            <button id="enter-site" class="banner-cta">Comece Sua Jornada</button>
         </div>
     </header>
 
-    <script src="js/main.js"></script>
+    <!-- CONTEÚDO DINÂMICO -->
+    <div id="app"></div>
+
+    <!-- Seus scripts existentes -->
+    <script src="js/router.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Inicialização do SPA
+        document.getElementById('enter-site').addEventListener('click', function() {
+            // Esconde o banner inicial
+            document.getElementById('main-banner').style.display = 'none';
+            
+            // Carrega a home page via router
+            window.router.navigateTo('home');
+        });
+
+        // Se já tiver uma rota (ex: acesso direto a uma página)
+        if (window.location.hash) {
+            document.getElementById('main-banner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
