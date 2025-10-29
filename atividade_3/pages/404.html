@@ -1,15 +1,185 @@
-<!-- pages/404.html -->
-<section class="section section-light">
-    <div class="container">
-        <div style="text-align: center; padding: 60px 20px;">
-            <div style="font-size: 6em; margin-bottom: 20px;">😵</div>
-            <h2 style="color: var(--accent-red); margin: 0 0 15px 0;">PÁGINA NÃO ENCONTRADA</h2>
-            <p style="font-size: 1.2em; color: var(--primary-dark); margin: 0 0 30px 0;">
-                Ops! Parece que essa página não existe... mas não desista como aquele chefe difícil!
-            </p>
-            <a href="#home" class="btn btn-primary" data-route="home">
-                🏠 Voltar para Home
-            </a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada - Platina Para Todos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .error-emoji {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        .error-title {
+            color: #ff4757;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .error-subtitle {
+            color: #3742fa;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            color: #2f3542;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .game-references {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid #ffa502;
+        }
+        
+        .game-references h3 {
+            color: #ffa502;
+            margin-bottom: 1rem;
+        }
+        
+        .game-references ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .game-references li {
+            padding: 0.5rem 0;
+            color: #2f3542;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .button-group-404 {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <a href="../index.html" class="nav-link">🏠 INÍCIO</a>
+        <a href="home.html" class="nav-link">📖 SOBRE</a>
+        <a href="projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="discord.html" class="nav-link">💬 DISCORD</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Error Section -->
+        <section class="section section-light">
+            <div class="container">
+                <div style="text-align: center; padding: 40px 20px;">
+                    <!-- Emoji Animado -->
+                    <div class="error-emoji">🎮❌</div>
+                    
+                    <!-- Título Principal -->
+                    <h1 class="error-title">ERRO 404</h1>
+                    
+                    <!-- Subtítulo -->
+                    <h2 class="error-subtitle">PÁGINA NÃO ENCONTRADA</h2>
+                    
+                    <!-- Mensagem Principal -->
+                    <p class="error-message">
+                        <strong>Ops! Parece que essa página desrespawnou...</strong><br>
+                        Assim como aquele chefe difícil que some quando você menos espera!
+                    </p>
+
+                    <!-- Referências Gamer -->
+                    <div class="game-references">
+                        <h3>🎯 VOCÊ PODE TER CAÍDO EM ALGUMAS ARMADILHAS:</h3>
+                        <ul>
+                            <li>✅ Digitou o URL errado (como morrer no tutorial)</li>
+                            <li>✅ A página foi movida (como um NPC que mudou de cidade)</li>
+                            <li>✅ Link desatualizado (como uma build nerfada)</li>
+                            <li>✅ Servidor offline (como quando a internet cai no boss final)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Estatísticas Engraçadas -->
+                    <div class="objective-card" style="color: #2f3542; margin: 2rem auto; max-width: 500px;">
+                        <p style="color: #2f3542;"><strong style="color: #ff4757;">📊 ESTATÍSTICAS DO ERRO:</strong></p>
+                        <div style="margin-top: 1rem;">
+                            <p style="color: #2f3542; margin: 0.5rem 0;">🎯 <strong>Chance de encontrar esta página:</strong> 0.01%</p>
+                            <p style="color: #2f3542; margin: 0.5rem 0;">🏆 <strong>Dificuldade:</strong> Mais fácil que Ornstein & Smough</p>
+                            <p style="color: #2f3542; margin: 0.5rem 0;">⚡ <strong>Tempo para resolver:</strong> 2 segundos (mais rápido que um speedrun)</p>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="button-group-404">
+                        <a href="../index.html" class="btn btn-primary">
+                            🏠 VOLTAR PARA O INÍCIO
+                        </a>
+                        <a href="home.html" class="btn btn-accent">
+                            📖 IR PARA A HOME
+                        </a>
+                        <a href="discord.html" class="btn" style="background: #5865F2; color: white;">
+                            💬 PEDIR AJUDA NO DISCORD
+                        </a>
+                    </div>
+
+                    <!-- Dica Extra -->
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: #e9ecef; border-radius: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <p style="color: #2f3542; margin: 0; font-style: italic;">
+                            💡 <strong>Dica do Pro:</strong> Se isso fosse um jogo, você já teria desbloqueado o troféu 
+                            <strong>"Explorador Perdido"</strong>! Mas não se preocupe, até os melhores gamers se perdem às vezes! 🎮
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Humor Gamer -->
+        <section class="section section-dark">
+            <div class="container">
+                <h2 class="title-badge">😄 MOMENTOS ENGRAÇADOS DE GAMERS PERDIDOS</h2>
+                
+                <div class="grid grid-2">
+                    <div class="testimonial">
+                        <h4 style="color: #ffa502;">🔥 SoulsPlayer</h4>
+                        <p><em>"Uma vez fiquei 2 horas procurando a saída de Blighttown... este erro 404 me lembrou daqueles tempos!"</em></p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <h4 style="color: #3742fa;">⚡ ZeldaFan</h4>
+                        <p><em>"Pelo menos aqui não tem puzzles de 'empurrar blocos' para encontrar a página certa!"</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="discord.html" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2007</p>
         </div>
-    </div>
-</section>
+    </footer>
+</body>
+</html>
