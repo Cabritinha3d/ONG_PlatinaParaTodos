@@ -8,27 +8,47 @@ class PlatinaApp {
     initializeApp() {
         this.setupRouter();
         this.initializeComponents();
-        this.setupServiceWorker();
+        // Removido setupServiceWorker() pois não temos sw.js
+        this.setupNavigation();
         
-        // Inicia a rota atual
-        this.router.navigate(window.location.pathname || '/', false);
+        // Inicia a rota atual - usando hash-based routing
+        const initialRoute = window.location.hash.replace('#', '') || 'home';
+        this.router.navigate(initialRoute, false);
     }
 
     setupRouter() {
-        // Define as rotas da aplicação
-        this.router.addRoute('/', '/home.html');
-        this.router.addRoute('/mentoria', '/mentoria.html');
-        this.router.addRoute('/grupos', '/grupos.html');
-        this.router.addRoute('/guias', '/guias.html');
-        this.router.addRoute('/eventos', '/eventos.html');
-        this.router.addRoute('/discord', '/discord.html');
-        this.router.addRoute('/doacao', '/doacao.html');
-        this.router.addRoute('/cadastro', '/cadastro.html');
-        this.router.addRoute('/obrigado', '/obrigado.html');
-        this.router.addRoute('/404', '/404.html');
+        // Define as rotas da aplicação (hash-based)
+        this.router.addRoute('home', 'home.html');
+        this.router.addRoute('projetos', 'projetos.html');
+        this.router.addRoute('cadastro', 'cadastro.html');
+        this.router.addRoute('grupos', 'grupos.html');
+        this.router.addRoute('guias', 'guias.html');
+        this.router.addRoute('eventos', 'eventos.html');
+        this.router.addRoute('discord', 'discord.html');
+        this.router.addRoute('doacao', 'doacao.html');
+        this.router.addRoute('formobrigado', 'formobrigado.html');
+        this.router.addRoute('404', '404.html');
 
         // Torna o router globalmente acessível
         window.router = this.router;
+    }
+
+    setupNavigation() {
+        // Configura navegação SPA para links com data-route
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('[data-route]');
+            if (link) {
+                e.preventDefault();
+                const route = link.getAttribute('data-route');
+                this.router.navigate(route);
+            }
+        });
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', () => {
+            const route = window.location.hash.replace('#', '') || 'home';
+            this.router.navigate(route, false);
+        });
     }
 
     initializeComponents() {
@@ -37,13 +57,10 @@ class PlatinaApp {
             FormValidator.initialize();
         }
 
-        // Inicializa sistema de templates
-        if (typeof TemplateManager !== 'undefined') {
-            window.TemplateManager = TemplateManager;
-        }
-
         // Configura outros componentes
         this.setupGlobalEventListeners();
+        
+        console.log('PlatinaApp inicializado com sucesso!');
     }
 
     setupGlobalEventListeners() {
@@ -65,12 +82,14 @@ class PlatinaApp {
         });
 
         // Back to top
-        document.addEventListener('scroll', this.throttle(this.handleScroll, 100));
+        window.addEventListener('scroll', this.throttle(this.handleScroll, 100));
     }
 
     toggleMobileMenu() {
         const nav = document.querySelector('.nav-main');
-        nav.classList.toggle('mobile-open');
+        if (nav) {
+            nav.classList.toggle('mobile-open');
+        }
     }
 
     openModal(modalId) {
@@ -91,10 +110,12 @@ class PlatinaApp {
 
     handleScroll() {
         const backToTop = document.querySelector('.back-to-top');
-        if (window.scrollY > 300) {
-            backToTop.style.display = 'block';
-        } else {
-            backToTop.style.display = 'none';
+        if (backToTop) {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
         }
     }
 
@@ -111,20 +132,54 @@ class PlatinaApp {
         }
     }
 
-    setupServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('SW registered: ', registration);
-                })
-                .catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
+    // Método para mostrar loading
+    showLoading() {
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.innerHTML = '<div class="loading">Carregando...</div>';
+        }
+    }
+
+    // Método para mostrar erro
+    showError(message) {
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.innerHTML = `
+                <section class="section section-light">
+                    <div class="container" style="text-align: center; padding: 40px;">
+                        <h2 style="color: var(--accent-red);">Erro</h2>
+                        <p>${message}</p>
+                        <a href="#home" class="btn btn-primary" data-route="home">Voltar para Home</a>
+                    </div>
+                </section>
+            `;
         }
     }
 }
 
 // Inicializa a aplicação quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
-    window.app = new PlatinaApp();
+    try {
+        window.app = new PlatinaApp();
+    } catch (error) {
+        console.error('Erro ao inicializar a aplicação:', error);
+        // Fallback básico se a SPA falhar
+        document.getElementById('main-content').innerHTML = `
+            <section class="section section-light">
+                <div class="container" style="text-align: center; padding: 40px;">
+                    <h2 style="color: var(--accent-red);">Erro na Aplicação</h2>
+                    <p>Houve um problema ao carregar a aplicação. Recarregue a página.</p>
+                    <button onclick="window.location.reload()" class="btn btn-primary">Recarregar</button>
+                </div>
+            </section>
+        `;
+    }
+});
+
+// Adiciona fallback para navegação tradicional se JavaScript falhar
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.setAttribute('href', link.getAttribute('href').replace('#', ''));
+    });
 });
