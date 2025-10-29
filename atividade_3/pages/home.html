@@ -6,23 +6,21 @@
     <title>Platina Para Todos - Home</title>
     <link rel="stylesheet" href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/css/style.css">
     <style>
-        /* Estilos para garantir que os links funcionem */
-        .service-link, .nav-link {
+        /* Estilos para os serviços clicáveis */
+        .service-item {
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        /* Loading state */
-        .loading {
-            text-align: center;
-            padding: 50px;
-            font-size: 1.5rem;
+        .service-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .error {
-            text-align: center;
-            padding: 50px;
-            color: var(--accent-red);
-            font-size: 1.2rem;
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
     </style>
 </head>
@@ -31,9 +29,9 @@
     <nav class="nav-main">
         <a href="#home" class="nav-link active">🏠 INÍCIO</a>
         <a href="#sobre" class="nav-link">📖 SOBRE</a>
-        <a href="#mentoria" class="nav-link">🎯 MENTORIA</a>
-        <a href="#guias" class="nav-link">📚 GUIAS</a>
-        <a href="#discord" class="nav-link">💬 DISCORD</a>
+        <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/discord.html" class="nav-link">💬 DISCORD</a>
     </nav>
 
     <!-- Main Content -->
@@ -59,30 +57,40 @@
                             <h3>NOSSOS SERVIÇOS</h3>
                             <p>Escolha como podemos te ajudar</p>
                             
-                            <div class="service-item" style="border-left-color: #ff4757;" data-page="projetos">
-                                <strong>🎯 MENTORIA</strong>
-                                <p>Aprenda com gamers experientes</p>
-                            </div>
+                            <!-- MENTORIA -->
+                            <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/projetos.html" class="service-link">
+                                <div class="service-item" style="border-left-color: #ff4757;">
+                                    <strong>🎯 MENTORIA</strong>
+                                </div>
+                            </a>
                             
-                            <div class="service-item" style="border-left-color: #3742fa;" data-page="guias">
-                                <strong>📚 GUIAS</strong>
-                                <p>Tutoriais passo a passo</p>
-                            </div>
+                            <!-- GUIAS -->
+                            <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/guias.html" class="service-link">
+                                <div class="service-item" style="border-left-color: #3742fa;">
+                                    <strong>📚 GUIAS</strong>
+                                </div>
+                            </a>
                             
-                            <div class="service-item" style="border-left-color: #ffa502;" data-page="grupos">
-                                <strong>👥 GRUPOS</strong>
-                                <p>Comunidade de apoio</p>
-                            </div>
+                            <!-- GRUPOS -->
+                            <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/grupos.html" class="service-link">
+                                <div class="service-item" style="border-left-color: #ffa502;">
+                                    <strong>👥 GRUPOS</strong>
+                                </div>
+                            </a>
                             
-                            <div class="service-item" style="border-left-color: #8e44ad;" data-page="eventos">
-                                <strong>🎪 EVENTOS</strong>
-                                <p>Competições e encontros</p>
-                            </div>
+                            <!-- EVENTOS -->
+                            <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/eventos.html" class="service-link">
+                                <div class="service-item" style="border-left-color: #8e44ad;">
+                                    <strong>🎪 EVENTOS</strong>
+                                </div>
+                            </a>
                             
-                            <div class="service-item" style="border-left-color: #4752c4;" data-page="discord">
-                                <strong>💬 DISCORD</strong>
-                                <p>Nossa comunidade online</p>
-                            </div>
+                            <!-- DISCORD -->
+                            <a href="https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/discord.html" class="service-link">
+                                <div class="service-item" style="border-left-color: #4752c4;">
+                                    <strong>💬 DISCORD</strong>
+                                </div>
+                            </a>
                         </div>
                     </aside>
 
@@ -214,49 +222,7 @@
     </footer>
 
     <script>
-        // Sistema de navegação simplificado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navegação por âncoras
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    
-                    if (targetId === 'home') {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                    
-                    // Atualiza link ativo
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Serviços - redirecionamento direto
-            document.querySelectorAll('.service-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const page = this.getAttribute('data-page');
-                    if (page) {
-                        window.location.href = `https://cabritinha3d.github.io/ONG_PlatinaParaTodos/atividade_3/pages/${page}.html`;
-                    }
-                });
-            });
-            
-            // Links diretos para páginas externas
-            document.querySelectorAll('a[href*=".html"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Permite o comportamento padrão - navegação normal
-                    // Remove qualquer prevenção padrão
-                });
-            });
-        });
-
-        // Scroll suave para âncoras internas
+        // Scroll suave para âncoras
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
