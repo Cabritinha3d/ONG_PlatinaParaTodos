@@ -351,3 +351,31 @@ body {
         font-size: 1rem;
     }
 }
+
+/* CORREÇÕES EMERGENCIAIS PARA PÁGINAS */
+.main-content {
+    min-height: 100vh;
+}
+
+/* Garante que o conteúdo tenha fundo */
+.section-light {
+    background: var(--light-bg) !important;
+    color: var(--text-dark) !important;
+}
+
+.section-dark {
+    background: var(--darker-bg) !important;
+    color: var(--text-light) !important;
+}
+
+/* Links de voltar */
+.back-button {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
