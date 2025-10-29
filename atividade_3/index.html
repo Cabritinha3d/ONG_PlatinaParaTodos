@@ -5,58 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platina Para Todos</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <style>
+        /* ESTILOS ESPECÍFICOS DO BANNER SPA */
+        .hero-banner {
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.9)), 
+                        url('https://source.unsplash.com/random/1600x900/?gaming,game') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner-overlay {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .banner-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .banner-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ffa502;
+        }
+
+        .banner-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .banner-tagline p {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .banner-cta {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff4757, #ffa502);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .banner-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+        }
+
+        /* RESPONSIVIDADE DO BANNER */
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 2.5rem;
+            }
+            
+            .banner-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .banner-cta {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- BANNER INICIAL -->
-    <header class="hero-banner" id="main-banner">
+    <!-- BANNER INICIAL SPA -->
+    <header class="hero-banner">
         <div class="banner-overlay">
             <h1 class="banner-title">🎮 PLATINA PARA TODOS</h1>
             <p class="banner-subtitle">✨ "Porque toda conquista nasceu para ser conquistada" ✨</p>
             <div class="banner-tagline">
                 <p>🏆 <strong>Comunidade Gamers</strong> | 🤝 <strong>Ajuda Gratuita</strong> | 🚀 <strong>Resultados Reais</strong></p>
             </div>
-            <button id="enter-site" class="banner-cta">Comece Sua Jornada</button>
+            <a href="pages/home.html" class="banner-cta">Comece Sua Jornada</a>
         </div>
     </header>
-
-    <!-- CONTEÚDO DINÂMICO -->
-    <div id="app">
-        <!-- O router.js vai carregar o conteúdo aqui -->
-    </div>
-
-    <!-- Scripts na ORDEM CORRETA -->
-    <script src="js/templates.js"></script>
-    <script src="js/storage.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/form-validator.js"></script>
-    <script src="js/app.js"></script>
-    
-    <script>
-        // Aguarda o router carregar
-        document.addEventListener('DOMContentLoaded', function() {
-            const enterButton = document.getElementById('enter-site');
-            
-            enterButton.addEventListener('click', function() {
-                // Esconde o banner inicial
-                document.getElementById('main-banner').style.display = 'none';
-                
-                // Usa o router existente para carregar a home
-                if (window.router && window.router.loadPage) {
-                    window.router.loadPage('home');
-                } else if (window.router && window.router.navigateTo) {
-                    window.router.navigateTo('home');
-                } else {
-                    // Fallback: redireciona para home.html
-                    window.location.href = 'pages/home.html';
-                }
-            });
-
-            // Se já tiver hash na URL, esconde o banner
-            if (window.location.hash && window.location.hash !== '#/') {
-                document.getElementById('main-banner').style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
