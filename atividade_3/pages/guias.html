@@ -1,165 +1,211 @@
-<!-- pages/guias.html -->
-<section class="section section-light">
-    <div class="container">
-        <div class="guia-header">
-            <h2 class="title-badge" style="background: var(--accent-blue);">📚 BIBLIOTECA DE GUIAS</h2>
-            <p style="margin: 0; font-size: 1.1em;">Tudo que você precisa para platinar seus jogos favoritos!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guias - Platina Para Todos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .guia-header {
+            background: linear-gradient(135deg, var(--accent-blue), var(--darker-bg));
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+        .guia-categoria {
+            background: white;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-blue);
+        }
+        .guia-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+            transition: all 0.3s;
+        }
+        .guia-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .download-btn {
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .guia-notice {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin-top: 30px;
+        }
+        .back-btn {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .back-btn:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Garantir que o texto seja visível */
+        .guia-categoria,
+        .guia-categoria * {
+            color: #2f3542 !important;
+        }
+        
+        .guia-item h4,
+        .guia-item p {
+            color: #2f3542 !important;
+        }
+        
+        .guia-header h2,
+        .guia-header p {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <a href="../index.html" class="nav-link">🏠 INÍCIO</a>
+        <a href="home.html" class="nav-link">📖 SOBRE</a>
+        <a href="projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="discord.html" class="nav-link">💬 DISCORD</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section section-light">
+            <div class="container">
+                <div class="guia-header">
+                    <h2 class="title-badge" style="background: var(--accent-blue);">📚 BIBLIOTECA DE GUIAS</h2>
+                    <p style="margin: 0; font-size: 1.1em;">Tudo que você precisa para platinar seus jogos favoritos!</p>
+                </div>
+
+                <!-- Categoria 1 -->
+                <div class="guia-categoria">
+                    <h3 style="margin: 0 0 15px 0;">🎮 JOGOS DIFÍCEIS</h3>
+                    
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Sekiro: Shadows Die Twice</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Guia completo de platinha + localização de todos os itens</p>
+                        <a href="https://drive.google.com/link-sekiro" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
+                    </div>
+
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Elden Ring</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Mapa interativo + rota eficiente para platinar em 80h</p>
+                        <a href="https://drive.google.com/link-eldenring" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
+                    </div>
+
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Bloodborne</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Builds otimizadas + localização de armas secretas</p>
+                        <a href="https://drive.google.com/link-bloodborne" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
+                    </div>
+                </div>
+
+                <!-- Categoria 2 -->
+                <div class="guia-categoria">
+                    <h3 style="margin: 0 0 15px 0;">⏳ JOGOS LONGOS</h3>
+                    
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-orange);">Red Dead Redemption 2</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Guia de missões secundárias + localização de animais raros + colecionáveis</p>
+                        <a href="https://drive.google.com/link-reddead" class="download-btn" style="background: var(--accent-orange);">📥 Baixar PDF</a>
+                    </div>
+
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-orange);">The Witcher 3</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Missões de Gwent + builds de magia + DLCs completas</p>
+                        <a href="https://drive.google.com/link-witcher" class="download-btn" style="background: var(--accent-orange);">📥 Baixar PDF</a>
+                    </div>
+                </div>
+
+                <!-- Categoria 3 -->
+                <div class="guia-categoria">
+                    <h3 style="margin: 0 0 15px 0;">👥 JOGOS COOPERATIVOS</h3>
+                    
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-purple);">It Takes Two</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Todos os minijogos + troféus em co-op</p>
+                        <a href="https://drive.google.com/link-ittakestwo" class="download-btn" style="background: var(--accent-purple);">📥 Baixar PDF</a>
+                    </div>
+
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-purple);">Overcooked 2</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Estratégias para 4 estrelas em todas as fases</p>
+                        <a href="https://drive.google.com/link-overcooked" class="download-btn" style="background: var(--accent-purple);">📥 Baixar PDF</a>
+                    </div>
+                </div>
+
+                <!-- Categoria 4 -->
+                <div class="guia-categoria">
+                    <h3 style="margin: 0 0 15px 0;">🏆 JOGOS RÁPIDOS</h3>
+                    
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-green);">Astro's Playroom</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Localização de todos os artefatos em 3h</p>
+                        <a href="https://drive.google.com/link-astro" class="download-btn" style="background: var(--accent-green);">📥 Baixar PDF</a>
+                    </div>
+
+                    <div class="guia-item">
+                        <h4 style="margin: 0 0 8px 0; color: var(--accent-green);">Spider-Man: Miles Morales</h4>
+                        <p style="margin: 0 0 10px 0; color: #7f8c8d;">Rota rápida para platinar em 15h</p>
+                        <a href="https://drive.google.com/link-spiderman" class="download-btn" style="background: var(--accent-green);">📥 Baixar PDF</a>
+                    </div>
+                </div>
+
+                <!-- AVISO -->
+                <div class="guia-notice">
+                    <p style="margin: 0; font-size: 0.9em;"><strong>💡 Dica:</strong> Não encontrou o guia que procura? Peça no nosso <a href="discord.html" style="color: var(--accent-blue); font-weight: bold;">Discord</a> ou agende uma <a href="projetos.html" style="color: var(--accent-blue); font-weight: bold;">Mentoria</a>!</p>
+                </div>
+
+                <!-- Botão Voltar -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="home.html" class="back-btn">← Voltar para Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="discord.html" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2007</p>
         </div>
-
-        <!-- Categoria 1 -->
-        <div class="guia-categoria">
-            <h3 style="color: var(--primary-dark); margin: 0 0 15px 0;">🎮 JOGOS DIFÍCEIS</h3>
-            
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Sekiro: Shadows Die Twice</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Guia completo de platinha + localização de todos os itens</p>
-                <a href="https://drive.google.com/link-sekiro" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
-            </div>
-
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Elden Ring</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Mapa interativo + rota eficiente para platinar em 80h</p>
-                <a href="https://drive.google.com/link-eldenring" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
-            </div>
-
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-red);">Bloodborne</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Builds otimizadas + localização de armas secretas</p>
-                <a href="https://drive.google.com/link-bloodborne" class="download-btn" style="background: var(--accent-red);">📥 Baixar PDF</a>
-            </div>
-        </div>
-
-        <!-- Categoria 2 -->
-        <div class="guia-categoria">
-            <h3 style="color: var(--primary-dark); margin: 0 0 15px 0;">⏳ JOGOS LONGOS</h3>
-            
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-orange);">Red Dead Redemption 2</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Guia de missões secundárias + localização de animais raros + colecionáveis</p>
-                <a href="https://drive.google.com/link-reddead" class="download-btn" style="background: var(--accent-orange);">📥 Baixar PDF</a>
-            </div>
-
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-orange);">The Witcher 3</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Missões de Gwent + builds de magia + DLCs completas</p>
-                <a href="https://drive.google.com/link-witcher" class="download-btn" style="background: var(--accent-orange);">📥 Baixar PDF</a>
-            </div>
-        </div>
-
-        <!-- Categoria 3 -->
-        <div class="guia-categoria">
-            <h3 style="color: var(--primary-dark); margin: 0 0 15px 0;">👥 JOGOS COOPERATIVOS</h3>
-            
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-purple);">It Takes Two</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Todos os minijogos + troféus em co-op</p>
-                <a href="https://drive.google.com/link-ittakestwo" class="download-btn" style="background: var(--accent-purple);">📥 Baixar PDF</a>
-            </div>
-
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-purple);">Overcooked 2</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Estratégias para 4 estrelas em todas as fases</p>
-                <a href="https://drive.google.com/link-overcooked" class="download-btn" style="background: var(--accent-purple);">📥 Baixar PDF</a>
-            </div>
-        </div>
-
-        <!-- Categoria 4 -->
-        <div class="guia-categoria">
-            <h3 style="color: var(--primary-dark); margin: 0 0 15px 0;">🏆 JOGOS RÁPIDOS</h3>
-            
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-green);">Astro's Playroom</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Localização de todos os artefatos em 3h</p>
-                <a href="https://drive.google.com/link-astro" class="download-btn" style="background: var(--accent-green);">📥 Baixar PDF</a>
-            </div>
-
-            <div class="guia-item">
-                <h4 style="margin: 0 0 8px 0; color: var(--accent-green);">Spider-Man: Miles Morales</h4>
-                <p style="margin: 0 0 10px 0; color: #7f8c8d;">Rota rápida para platinar em 15h</p>
-                <a href="https://drive.google.com/link-spiderman" class="download-btn" style="background: var(--accent-green);">📥 Baixar PDF</a>
-            </div>
-        </div>
-
-        <!-- AVISO -->
-        <div class="guia-notice">
-            <p style="margin: 0; font-size: 0.9em;"><strong>💡 Dica:</strong> Não encontrou o guia que procura? Peça no nosso <a href="#discord" style="color: var(--accent-blue); font-weight: bold;" data-route="discord">Discord</a> ou agende uma <a href="#projetos" style="color: var(--accent-blue); font-weight: bold;" data-route="projetos">Mentoria</a>!</p>
-        </div>
-
-        <!-- Botão Voltar -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="#home" class="back-btn" data-route="home">← Voltar para Home</a>
-        </div>
-    </div>
-</section>
-
-<style>
-    .guia-header {
-        background: linear-gradient(135deg, var(--accent-blue), var(--primary-dark));
-        color: white;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
-    }
-    .guia-categoria {
-        background: white;
-        margin: 25px 0;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        border-left: 5px solid var(--accent-blue);
-    }
-    .guia-item {
-        background: #f8f9fa;
-        padding: 20px;
-        margin: 15px 0;
-        border-radius: 8px;
-        border-left: 3px solid var(--accent-blue);
-        transition: all 0.3s;
-    }
-    .guia-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .download-btn {
-        color: white;
-        padding: 8px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-size: 0.9em;
-        font-weight: bold;
-        display: inline-block;
-        transition: all 0.3s;
-    }
-    .download-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .guia-notice {
-        background: #fff3cd;
-        color: #856404;
-        padding: 20px;
-        border-radius: 8px;
-        border-left: 4px solid #ffc107;
-        margin-top: 30px;
-    }
-    .back-btn {
-        background: var(--accent-blue);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 25px;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-    }
-    .back-btn:hover {
-        background: var(--accent-red);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-</style>
+    </footer>
+</body>
+</html>
