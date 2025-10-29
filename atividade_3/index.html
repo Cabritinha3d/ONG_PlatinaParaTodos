@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platina Para Todos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
 </head>
 <body>
     <!-- BANNER INICIAL -->
@@ -20,28 +21,42 @@
     </header>
 
     <!-- CONTEÚDO DINÂMICO -->
-    <div id="app"></div>
+    <div id="app">
+        <!-- O router.js vai carregar o conteúdo aqui -->
+    </div>
 
-    <!-- Seus scripts existentes -->
-    <script src="js/router.js"></script>
+    <!-- Scripts na ORDEM CORRETA -->
     <script src="js/templates.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/form-validator.js"></script>
     <script src="js/app.js"></script>
     
     <script>
-        // Inicialização do SPA
-        document.getElementById('enter-site').addEventListener('click', function() {
-            // Esconde o banner inicial
-            document.getElementById('main-banner').style.display = 'none';
+        // Aguarda o router carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            const enterButton = document.getElementById('enter-site');
             
-            // Carrega a home page via router
-            window.router.navigateTo('home');
-        });
+            enterButton.addEventListener('click', function() {
+                // Esconde o banner inicial
+                document.getElementById('main-banner').style.display = 'none';
+                
+                // Usa o router existente para carregar a home
+                if (window.router && window.router.loadPage) {
+                    window.router.loadPage('home');
+                } else if (window.router && window.router.navigateTo) {
+                    window.router.navigateTo('home');
+                } else {
+                    // Fallback: redireciona para home.html
+                    window.location.href = 'pages/home.html';
+                }
+            });
 
-        // Se já tiver uma rota (ex: acesso direto a uma página)
-        if (window.location.hash) {
-            document.getElementById('main-banner').style.display = 'none';
-        }
+            // Se já tiver hash na URL, esconde o banner
+            if (window.location.hash && window.location.hash !== '#/') {
+                document.getElementById('main-banner').style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
