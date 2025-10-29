@@ -1,226 +1,286 @@
-<!-- pages/eventos.html -->
-<section class="section section-light">
-    <div class="container">
-        <!-- INTRODUÇÃO -->
-        <div class="event-card">
-            <h2 class="title-badge" style="background: var(--accent-purple);">O que são nossos Eventos?</h2>
-            <p style="font-size: 1.2em; line-height: 1.6; color: var(--primary-dark); margin: 0; text-align: center;">
-                Encontros <strong>semanais e mensais</strong> onde a comunidade se reúne para competir, cooperar 
-                e se divertir! Desde <strong>torneios rankeados</strong> até <strong>jogatinas casuais</strong>, 
-                sempre com o objetivo de fortalecer nossa comunidade.
-            </p>
-        </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Platina Para Todos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .event-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-purple);
+        }
+        .event-header {
+            background: linear-gradient(135deg, var(--accent-purple), #8e44ad);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
+        }
+        .event-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 3px solid var(--accent-purple);
+        }
+        .event-btn {
+            background: var(--accent-purple);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .event-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .calendar-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid var(--accent-red);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .calendar-item:hover {
+            transform: translateY(-5px);
+        }
+        .prize-card {
+            background: linear-gradient(135deg, var(--accent-orange), #e67e22);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+        }
+        .countdown {
+            background: var(--darker-bg);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+            font-family: monospace;
+            font-size: 1.3em;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .event-hero {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.3);
+        }
+        .back-btn {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .back-btn:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Garantir que o texto seja visível */
+        .event-card,
+        .event-card * {
+            color: #2f3542 !important;
+        }
+        
+        .calendar-item h3,
+        .calendar-item p {
+            color: #2f3542 !important;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3,
+        .highlight-box p {
+            color: white !important;
+        }
+        
+        @media (max-width: 768px) {
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <a href="../index.html" class="nav-link">🏠 INÍCIO</a>
+        <a href="home.html" class="nav-link">📖 SOBRE</a>
+        <a href="projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="discord.html" class="nav-link">💬 DISCORD</a>
+    </nav>
 
-        <!-- PRÓXIMO EVENTO -->
-        <div id="proximo" class="event-card">
-            <div class="event-header">
-                <h2 style="margin: 0 0 15px 0; font-size: 2em;">🔥 PRÓXIMO EVENTO</h2>
-                <p style="margin: 0; font-size: 1.3em;">TORNEIO MENSAL - "DESAFIO DOS DEUSES"</p>
-            </div>
-
-            <!-- COUNTDOWN -->
-            <div class="countdown">
-                ⏳ EVENTO COMEÇA EM: <strong>15 DIAS - 20H</strong>
-            </div>
-
-            <div class="event-details">
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🎮 Jogo:</strong> God of War Ragnarök (No Give Me God of War difficulty)</p>
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>📅 Data:</strong> 15 de Janeiro - 20h às 23h</p>
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>👥 Vagas:</strong> 50 participantes</p>
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🎯 Objetivo:</strong> Vencer o maior número de Valquírias no menor tempo</p>
-                <p style="margin: 0; font-size: 1.1em;"><strong>📍 Local:</strong> Discord da comunidade</p>
-            </div>
-
-            <h3 style="color: var(--accent-purple); margin: 25px 0 15px 0; text-align: center; font-size: 1.4em;">🏆 PREMIAÇÃO:</h3>
-            <div class="prize-card">
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥇 1º Lugar:</strong> R$ 100 + Badge Lendário no Discord</p>
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥈 2º Lugar:</strong> R$ 50 + Badge Épico no Discord</p>
-                <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥉 3º Lugar:</strong> R$ 25 + Badge Raro no Discord</p>
-                <p style="margin: 0; font-size: 1.1em;"><strong>🎁 Todos participantes:</strong> Emblema especial + Guia exclusivo</p>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="#discord" class="event-btn" data-route="discord">🎯 QUERO PARTICIPAR!</a>
-                <p style="color: #7f8c8d; font-size: 0.9em; margin: 15px 0 0 0;">As inscrições são feitas no nosso Discord</p>
-            </div>
-        </div>
-
-        <!-- CALENDÁRIO SEMANAL -->
-        <div id="calendario" class="event-card">
-            <h2 class="title-badge" style="background: var(--accent-purple);">🗓️ CALENDÁRIO SEMANAL</h2>
-            
-            <div class="calendar-grid">
-                <!-- Segunda -->
-                <div class="calendar-item">
-                    <h3 style="color: var(--accent-red); margin: 0 0 15px 0; font-size: 1.3em;">🗡️ SEGUNDA SOULS</h3>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Horário:</strong> 20h - 22h</p>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Jogo:</strong> Dark Souls Trilogy</p>
-                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Atividade:</strong> Co-op e ajuda em bosses</p>
+    <!-- Main Content -->
+    <main>
+        <section class="section section-light">
+            <div class="container">
+                <!-- INTRODUÇÃO -->
+                <div class="event-card">
+                    <h2 class="title-badge" style="background: var(--accent-purple);">O que são nossos Eventos?</h2>
+                    <p style="font-size: 1.2em; line-height: 1.6; color: var(--text-dark); margin: 0; text-align: center;">
+                        Encontros <strong>semanais e mensais</strong> onde a comunidade se reúne para competir, cooperar 
+                        e se divertir! Desde <strong>torneios rankeados</strong> até <strong>jogatinas casuais</strong>, 
+                        sempre com o objetivo de fortalecer nossa comunidade.
+                    </p>
                 </div>
 
-                <!-- Quarta -->
-                <div class="calendar-item">
-                    <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.3em;">👥 QUARTA COOPERATIVA</h3>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Horário:</strong> 19h - 21h</p>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Jogo:</strong> It Takes Two / Overcooked</p>
-                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Atividade:</strong> Duplas e troféus em co-op</p>
+                <!-- PRÓXIMO EVENTO -->
+                <div id="proximo" class="event-card">
+                    <div class="event-header">
+                        <h2 style="margin: 0 0 15px 0; font-size: 2em; color: white !important;">🔥 PRÓXIMO EVENTO</h2>
+                        <p style="margin: 0; font-size: 1.3em; color: white !important;">TORNEIO MENSAL - "DESAFIO DOS DEUSES"</p>
+                    </div>
+
+                    <!-- COUNTDOWN -->
+                    <div class="countdown">
+                        ⏳ EVENTO COMEÇA EM: <strong>15 DIAS - 20H</strong>
+                    </div>
+
+                    <div class="event-details">
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🎮 Jogo:</strong> God of War Ragnarök (No Give Me God of War difficulty)</p>
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>📅 Data:</strong> 15 de Janeiro - 20h às 23h</p>
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>👥 Vagas:</strong> 50 participantes</p>
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🎯 Objetivo:</strong> Vencer o maior número de Valquírias no menor tempo</p>
+                        <p style="margin: 0; font-size: 1.1em;"><strong>📍 Local:</strong> Discord da comunidade</p>
+                    </div>
+
+                    <h3 style="color: var(--accent-purple); margin: 25px 0 15px 0; text-align: center; font-size: 1.4em;">🏆 PREMIAÇÃO:</h3>
+                    <div class="prize-card">
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥇 1º Lugar:</strong> R$ 100 + Badge Lendário no Discord</p>
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥈 2º Lugar:</strong> R$ 50 + Badge Épico no Discord</p>
+                        <p style="margin: 0 0 12px 0; font-size: 1.1em;"><strong>🥉 3º Lugar:</strong> R$ 25 + Badge Raro no Discord</p>
+                        <p style="margin: 0; font-size: 1.1em;"><strong>🎁 Todos participantes:</strong> Emblema especial + Guia exclusivo</p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="discord.html" class="event-btn">🎯 QUERO PARTICIPAR!</a>
+                        <p style="color: #7f8c8d; font-size: 0.9em; margin: 15px 0 0 0;">As inscrições são feitas no nosso Discord</p>
+                    </div>
                 </div>
 
-                <!-- Sexta -->
-                <div class="calendar-item">
-                    <h3 style="color: var(--accent-orange); margin: 0 0 15px 0; font-size: 1.3em;">🎮 SEXTA LIVRE</h3>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Horário:</strong> 18h - 23h</p>
-                    <p style="margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Jogo:</strong> Qualquer um!</p>
-                    <p style="margin: 0; color: var(--primary-dark); font-size: 1.1em;"><strong>Atividade:</strong> Jogatina geral e social</p>
+                <!-- CALENDÁRIO SEMANAL -->
+                <div id="calendario" class="event-card">
+                    <h2 class="title-badge" style="background: var(--accent-purple);">🗓️ CALENDÁRIO SEMANAL</h2>
+                    
+                    <div class="calendar-grid">
+                        <!-- Segunda -->
+                        <div class="calendar-item">
+                            <h3 style="color: var(--accent-red); margin: 0 0 15px 0; font-size: 1.3em;">🗡️ SEGUNDA SOULS</h3>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Horário:</strong> 20h - 22h</p>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Jogo:</strong> Dark Souls Trilogy</p>
+                            <p style="margin: 0; color: var(--text-dark); font-size: 1.1em;"><strong>Atividade:</strong> Co-op e ajuda em bosses</p>
+                        </div>
+
+                        <!-- Quarta -->
+                        <div class="calendar-item">
+                            <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.3em;">👥 QUARTA COOPERATIVA</h3>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Horário:</strong> 19h - 21h</p>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Jogo:</strong> It Takes Two / Overcooked</p>
+                            <p style="margin: 0; color: var(--text-dark); font-size: 1.1em;"><strong>Atividade:</strong> Duplas e troféus em co-op</p>
+                        </div>
+
+                        <!-- Sexta -->
+                        <div class="calendar-item">
+                            <h3 style="color: var(--accent-orange); margin: 0 0 15px 0; font-size: 1.3em;">🎮 SEXTA LIVRE</h3>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Horário:</strong> 18h - 23h</p>
+                            <p style="margin: 0 0 10px 0; color: var(--text-dark); font-size: 1.1em;"><strong>Jogo:</strong> Qualquer um!</p>
+                            <p style="margin: 0; color: var(--text-dark); font-size: 1.1em;"><strong>Atividade:</strong> Jogatina geral e social</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVENTOS PASSADOS -->
+                <div id="passados" class="event-card">
+                    <h2 class="title-badge" style="background: var(--accent-purple);">🏆 EVENTOS PASSADOS</h2>
+
+                    <div class="highlight-box">
+                        <h3 style="color: white !important; margin: 0 0 15px 0; font-size: 1.3em;">🎄 TORNEIO DE NATAL - "BATTLE OF THE BEASTS"</h3>
+                        <p style="margin: 0 0 12px 0; color: white !important;"><strong>Data:</strong> 20 de Dezembro | <strong>Jogo:</strong> Monster Hunter World</p>
+                        <p style="margin: 0 0 15px 0; color: white !important;"><strong>Resultado:</strong> 75 participantes | Time "Cacadores de Prata" venceu!</p>
+                        
+                        <div style="background: linear-gradient(135deg, var(--accent-green), #20c997); color: white; padding: 15px; border-radius: 8px;">
+                            <p style="margin: 0; font-size: 1em;"><strong>🎉 Sucesso:</strong> Arrecadamos R$ 500 para instituição de caridade!</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3 style="color: white !important; margin: 0 0 15px 0; font-size: 1.3em;">🎃 HALLOWEEN HORROR NIGHT</h3>
+                        <p style="margin: 0 0 12px 0; color: white !important;"><strong>Data:</strong> 31 de Outubro | <strong>Jogo:</strong> Resident Evil Village</p>
+                        <p style="margin: 0 0 15px 0; color: white !important;"><strong>Resultado:</strong> 60 participantes | Speedrun mais rápida: 2h15m</p>
+                        
+                        <div style="background: linear-gradient(135deg, var(--accent-green), #20c997); color: white; padding: 15px; border-radius: 8px;">
+                            <p style="margin: 0; font-size: 1em;"><strong>👻 Destaque:</strong> 15 pessoas venceram seu medo de jogos de terror!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION -->
+                <div class="event-hero">
+                    <h2 style="margin: 0 0 20px 0; font-size: 2.2em; color: white !important;">🎪 NÃO FIQUE DE FORA!</h2>
+                    <p style="margin: 0 0 30px 0; font-size: 1.2em; color: white !important;">Todos os eventos acontecem no nosso Discord. Junte-se a nós!</p>
+                    <a href="discord.html" class="event-btn" style="background: #57F287; color: var(--text-dark); font-size: 1.2em;">
+                        💬 ENTRAR NO DISCORD
+                    </a>
+                </div>
+
+                <!-- Botão Voltar -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="home.html" class="back-btn">← Voltar para Home</a>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="discord.html" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2007</p>
         </div>
-
-        <!-- EVENTOS PASSADOS -->
-        <div id="passados" class="event-card">
-            <h2 class="title-badge" style="background: var(--accent-purple);">🏆 EVENTOS PASSADOS</h2>
-
-            <div class="highlight-box">
-                <h3 style="color: var(--accent-red); margin: 0 0 15px 0; font-size: 1.3em;">🎄 TORNEIO DE NATAL - "BATTLE OF THE BEASTS"</h3>
-                <p style="margin: 0 0 12px 0; color: var(--primary-dark);"><strong>Data:</strong> 20 de Dezembro | <strong>Jogo:</strong> Monster Hunter World</p>
-                <p style="margin: 0 0 15px 0; color: var(--primary-dark);"><strong>Resultado:</strong> 75 participantes | Time "Cacadores de Prata" venceu!</p>
-                
-                <div style="background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 15px; border-radius: 8px;">
-                    <p style="margin: 0; font-size: 1em;"><strong>🎉 Sucesso:</strong> Arrecadamos R$ 500 para instituição de caridade!</p>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.3em;">🎃 HALLOWEEN HORROR NIGHT</h3>
-                <p style="margin: 0 0 12px 0; color: var(--primary-dark);"><strong>Data:</strong> 31 de Outubro | <strong>Jogo:</strong> Resident Evil Village</p>
-                <p style="margin: 0 0 15px 0; color: var(--primary-dark);"><strong>Resultado:</strong> 60 participantes | Speedrun mais rápida: 2h15m</p>
-                
-                <div style="background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 15px; border-radius: 8px;">
-                    <p style="margin: 0; font-size: 1em;"><strong>👻 Destaque:</strong> 15 pessoas venceram seu medo de jogos de terror!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- CALL TO ACTION -->
-        <div class="event-hero">
-            <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">🎪 NÃO FIQUE DE FORA!</h2>
-            <p style="margin: 0 0 30px 0; font-size: 1.2em;">Todos os eventos acontecem no nosso Discord. Junte-se a nós!</p>
-            <a href="#discord" class="event-btn" style="background: #57F287; color: var(--primary-dark); font-size: 1.2em;" data-route="discord">
-                💬 ENTRAR NO DISCORD
-            </a>
-        </div>
-
-        <!-- Botão Voltar -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="#home" class="back-btn" data-route="home">← Voltar para Home</a>
-        </div>
-    </div>
-</section>
-
-<style>
-    .event-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-        border-left: 5px solid var(--accent-purple);
-    }
-    .event-header {
-        background: linear-gradient(135deg, var(--accent-purple), #8e44ad);
-        color: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin-bottom: 25px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
-    }
-    .event-details {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px 0;
-        border-left: 3px solid var(--accent-purple);
-    }
-    .event-btn {
-        background: var(--accent-purple);
-        color: white;
-        padding: 15px 30px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 15px;
-        transition: all 0.3s;
-    }
-    .event-btn:hover {
-        background: #8e44ad;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
-    }
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-    }
-    .calendar-item {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        border: 2px solid var(--accent-red);
-        text-align: center;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transition: all 0.3s;
-    }
-    .calendar-item:hover {
-        transform: translateY(-5px);
-    }
-    .prize-card {
-        background: linear-gradient(135deg, var(--accent-orange), #e67e22);
-        color: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 20px 0;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
-    }
-    .countdown {
-        background: var(--primary-dark);
-        color: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        margin: 25px 0;
-        font-family: monospace;
-        font-size: 1.3em;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-    .event-hero {
-        background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-        color: white;
-        padding: 40px;
-        border-radius: 15px;
-        text-align: center;
-        margin-bottom: 40px;
-        box-shadow: 0 15px 40px rgba(155, 89, 182, 0.3);
-    }
-    .back-btn {
-        background: var(--accent-blue);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 25px;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-    }
-    .back-btn:hover {
-        background: var(--accent-red);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-</style>
+    </footer>
+</body>
+</html>
