@@ -1,236 +1,302 @@
-<!-- pages/doacao.html -->
-<section class="section section-light">
-    <div class="container">
-        <!-- MENSAGEM INSPIRADORA -->
-        <div class="donation-hero">
-            <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">🎮 POR QUE DOAR?</h2>
-            <p style="margin: 0; font-size: 1.2em; line-height: 1.6;">
-                Sua doação mantém nossa comunidade <strong>100% gratuita</strong> e nos ajuda a alcançar 
-                mais gamers que precisam de ajuda. Juntos, podemos transformar frustração em conquista!
-            </p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação - Platina Para Todos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .donation-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-red);
+        }
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.2);
+        }
+        .donation-option {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent-red);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .donation-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .donation-btn {
+            background: var(--accent-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        .donation-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+        }
+        .testimonial {
+            background: linear-gradient(135deg, var(--accent-green), #20c997);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #155724;
+        }
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            height: 100%;
+            border-radius: 10px;
+            width: 65%;
+        }
+        .donation-hero {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+        .back-btn {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .back-btn:hover {
+            background: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Garantir que o texto seja visível */
+        .donation-card,
+        .donation-card * {
+            color: #2f3542 !important;
+        }
+        
+        .donation-option h3,
+        .donation-option p {
+            color: #2f3542 !important;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3,
+        .highlight-box p {
+            color: white !important;
+        }
+        
+        @media (max-width: 768px) {
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main">
+        <a href="../index.html" class="nav-link">🏠 INÍCIO</a>
+        <a href="home.html" class="nav-link">📖 SOBRE</a>
+        <a href="projetos.html" class="nav-link">🎯 MENTORIA</a>
+        <a href="guias.html" class="nav-link">📚 GUIAS</a>
+        <a href="discord.html" class="nav-link">💬 DISCORD</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section section-light">
+            <div class="container">
+                <!-- MENSAGEM INSPIRADORA -->
+                <div class="donation-hero">
+                    <h2 style="margin: 0 0 20px 0; font-size: 2.2em; color: white !important;">🎮 POR QUE DOAR?</h2>
+                    <p style="margin: 0; font-size: 1.2em; line-height: 1.6; color: white !important;">
+                        Sua doação mantém nossa comunidade <strong>100% gratuita</strong> e nos ajuda a alcançar 
+                        mais gamers que precisam de ajuda. Juntos, podemos transformar frustração em conquista!
+                    </p>
+                </div>
+
+                <!-- IMPACTO -->
+                <div id="impacto" class="donation-card">
+                    <h2 class="title-badge" style="background: var(--accent-red);">📈 NOSSO IMPACTO</h2>
+                    
+                    <div class="impact-stats">
+                        <div class="stat-item">
+                            <div style="font-size: 2.5em; margin-bottom: 10px;">🎮</div>
+                            <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">1.200+</h3>
+                            <p style="margin: 0; font-size: 1em;">Gamers Ajudados</p>
+                        </div>
+                        <div class="stat-item">
+                            <div style="font-size: 2.5em; margin-bottom: 10px;">🏆</div>
+                            <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">3.500+</h3>
+                            <p style="margin: 0; font-size: 1em;">Platinas Conquistadas</p>
+                        </div>
+                        <div class="stat-item">
+                            <div style="font-size: 2.5em; margin-bottom: 10px;">🎯</div>
+                            <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">850+</h3>
+                            <p style="margin: 0; font-size: 1em;">Mentorias Realizadas</p>
+                        </div>
+                        <div class="stat-item">
+                            <div style="font-size: 2.5em; margin-bottom: 10px;">💝</div>
+                            <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">R$ 5.000+</h3>
+                            <p style="margin: 0; font-size: 1em;">Doados pela Comunidade</p>
+                        </div>
+                    </div>
+
+                    <!-- BARRA DE PROGRESSO -->
+                    <div style="margin-top: 30px;">
+                        <h3 style="color: var(--text-dark); margin: 0 0 15px 0; text-align: center;">🎯 META DO MÊS: Servidores Dedicados</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p style="text-align: center; color: #7f8c8d; margin: 10px 0 0 0;">
+                            <strong>R$ 1.300</strong> de R$ 2.000 arrecadados (65%)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- COMO DOAR -->
+                <div id="doar" class="donation-card">
+                    <h2 class="title-badge" style="background: var(--accent-red);">💝 COMO DOAR</h2>
+                    
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <p style="font-size: 1.2em; color: var(--text-dark);">Escolha o valor que cabe no seu orçamento ❤️</p>
+                    </div>
+
+                    <!-- OPÇÕES DE DOAÇÃO -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
+                        <div class="donation-option">
+                            <h3 style="color: #27ae60; margin: 0 0 15px 0; font-size: 1.2em;">🎮 DOAÇÃO BÁSICA</h3>
+                            <p style="font-size: 1.8em; color: var(--text-dark); margin: 0 0 15px 0;"><strong>R$ 10</strong></p>
+                            <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Ajuda 1 gamer com mentoria</p>
+                            <a href="https://wa.me/5511999999999?text=Olá! Quero doar R$ 10 para a Platina Para Todos" class="donation-btn" style="background: #27ae60;" target="_blank">
+                                DOAR R$ 10
+                            </a>
+                        </div>
+
+                        <div class="donation-option">
+                            <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.2em;">🏆 DOAÇÃO AVANÇADA</h3>
+                            <p style="font-size: 1.8em; color: var(--text-dark); margin: 0 0 15px 0;"><strong>R$ 25</strong></p>
+                            <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Custea 1 mês de servidor Discord</p>
+                            <a href="https://wa.me/5511999999999?text=Olá! Quero doar R$ 25 para a Platina Para Todos" class="donation-btn" style="background: var(--accent-blue);" target="_blank">
+                                DOAR R$ 25
+                            </a>
+                        </div>
+
+                        <div class="donation-option">
+                            <h3 style="color: var(--accent-purple); margin: 0 0 15px 0; font-size: 1.2em;">🌟 DOAÇÃO PREMIUM</h3>
+                            <p style="font-size: 1.8em; color: var(--text-dark); margin: 0 0 15px 0;"><strong>R$ 50</strong></p>
+                            <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Patrocina 1 evento comunitário</p>
+                            <a href="https://wa.me/5511999999999?text=Olá! Quero doar R$ 50 para a Platina Para Todos" class="donation-btn" style="background: var(--accent-purple);" target="_blank">
+                                DOAR R$ 50
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DOAÇÃO PERSONALIZADA -->
+                    <div class="highlight-box" style="text-align: center;">
+                        <h3 style="margin: 0 0 15px 0; color: white !important;">💎 DOAÇÃO PERSONALIZADA</h3>
+                        <p style="margin: 0 0 20px 0; color: white !important;">Quer doar um valor diferente? Entre em contato conosco!</p>
+                        <a href="mailto:misscabritas2@gmail.com" class="donation-btn" style="background: var(--accent-orange); color: var(--text-dark);">
+                            📧 DOAR OUTRO VALOR
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TRANSPARÊNCIA -->
+                <div id="transparencia" class="donation-card">
+                    <h2 class="title-badge" style="background: var(--accent-red);">🔍 TRANSPARÊNCIA TOTAL</h2>
+                    
+                    <div class="highlight-box">
+                        <h3 style="color: white !important; margin: 0 0 15px 0;">💰 PARA ONDE VAI SEU DINHEIRO?</h3>
+                        <ul style="color: white !important; margin: 0; padding-left: 20px; line-height: 1.8;">
+                            <li><strong>60% - Infraestrutura:</strong> Servidores Discord, hospedagem do site</li>
+                            <li><strong>25% - Eventos:</strong> Premiações, torneios, jogos para sorteio</li>
+                            <li><strong>10% - Conteúdo:</strong> Criação de guias, materiais educativos</li>
+                            <li><strong>5% - Taxas:</strong> Plataformas de pagamento</li>
+                        </ul>
+                    </div>
+
+                    <div class="testimonial">
+                        <h3 style="margin: 0 0 15px 0; color: white;">💬 DEPOIMENTO DE DOADOR</h3>
+                        <p style="margin: 0 0 15px 0; font-style: italic; line-height: 1.6;">"Doei R$ 25 e uma semana depois vi um post de um gamer que platinou 
+                        Dark Souls após 2 anos tentando. Saber que minha doação ajudou nisso não tem preço!"</p>
+                        <p style="margin: 0; font-weight: bold;">- Carlos, doador desde 2023</p>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION FINAL -->
+                <div class="donation-hero" style="margin-top: 40px;">
+                    <h2 style="margin: 0 0 20px 0; font-size: 2.2em; color: white !important;">🎮 JUNTE-SE AOS NOSSOS APOIADORES!</h2>
+                    <p style="margin: 0 0 30px 0; font-size: 1.2em; color: white !important;">Cada real doado ajuda um gamer a superar seus desafios</p>
+                    <a href="https://wa.me/5511999999999?text=Olá! Quero doar para a Platina Para Todos" class="donation-btn" style="background: var(--accent-red); font-size: 1.2em; padding: 18px 35px;" target="_blank">
+                        ❤️ DOAR AGORA
+                    </a>
+                    <p style="margin: 20px 0 0 0; font-size: 0.9em; opacity: 0.8; color: white !important;">
+                        Todos os Gamers agradecem a sua colaboração!
+                    </p>
+                </div>
+
+                <!-- Botão Voltar -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="home.html" class="back-btn">← Voltar para Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📧 misscabritas2@gmail.com</p>
+            <p>🔗 <a href="discord.html" style="color: white;">Entre no nosso Discord</a></p>
+            <p>Platina Para Todos &copy; 2007</p>
         </div>
-
-        <!-- IMPACTO -->
-        <div id="impacto" class="donation-card">
-            <h2 class="title-badge" style="background: var(--accent-red);">📈 NOSSO IMPACTO</h2>
-            
-            <div class="impact-stats">
-                <div class="stat-item">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🎮</div>
-                    <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">1.200+</h3>
-                    <p style="margin: 0; font-size: 1em;">Gamers Ajudados</p>
-                </div>
-                <div class="stat-item">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🏆</div>
-                    <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">3.500+</h3>
-                    <p style="margin: 0; font-size: 1em;">Platinas Conquistadas</p>
-                </div>
-                <div class="stat-item">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🎯</div>
-                    <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">850+</h3>
-                    <p style="margin: 0; font-size: 1em;">Mentorias Realizadas</p>
-                </div>
-                <div class="stat-item">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">💝</div>
-                    <h3 style="margin: 0 0 8px 0; font-size: 1.8em;">R$ 5.000+</h3>
-                    <p style="margin: 0; font-size: 1em;">Doados pela Comunidade</p>
-                </div>
-            </div>
-
-            <!-- BARRA DE PROGRESSO -->
-            <div style="margin-top: 30px;">
-                <h3 style="color: var(--primary-dark); margin: 0 0 15px 0; text-align: center;">🎯 META DO MÊS: Servidores Dedicados</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                <p style="text-align: center; color: #7f8c8d; margin: 10px 0 0 0;">
-                    <strong>R$ 1.300</strong> de R$ 2.000 arrecadados (65%)
-                </p>
-            </div>
-        </div>
-
-        <!-- COMO DOAR -->
-        <div id="doar" class="donation-card">
-            <h2 class="title-badge" style="background: var(--accent-red);">💝 COMO DOAR</h2>
-            
-            <div style="text-align: center; margin-bottom: 25px;">
-                <p style="font-size: 1.2em; color: var(--primary-dark);">Escolha o valor que cabe no seu orçamento ❤️</p>
-            </div>
-
-            <!-- OPÇÕES DE DOAÇÃO -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 30px 0;">
-                <div class="donation-option">
-                    <h3 style="color: #27ae60; margin: 0 0 15px 0; font-size: 1.2em;">🎮 DOAÇÃO BÁSICA</h3>
-                    <p style="font-size: 1.8em; color: var(--primary-dark); margin: 0 0 15px 0;"><strong>R$ 10</strong></p>
-                    <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Ajuda 1 gamer com mentoria</p>
-                    <a href="#doacao-processo" class="donation-btn" style="background: #27ae60;" data-route="doacao-processo">DOAR R$ 10</a>
-                </div>
-
-                <div class="donation-option">
-                    <h3 style="color: var(--accent-blue); margin: 0 0 15px 0; font-size: 1.2em;">🏆 DOAÇÃO AVANÇADA</h3>
-                    <p style="font-size: 1.8em; color: var(--primary-dark); margin: 0 0 15px 0;"><strong>R$ 25</strong></p>
-                    <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Custea 1 mês de servidor Discord</p>
-                    <a href="#doacao-processo" class="donation-btn" style="background: var(--accent-blue);" data-route="doacao-processo">DOAR R$ 25</a>
-                </div>
-
-                <div class="donation-option">
-                    <h3 style="color: var(--accent-purple); margin: 0 0 15px 0; font-size: 1.2em;">🌟 DOAÇÃO PREMIUM</h3>
-                    <p style="font-size: 1.8em; color: var(--primary-dark); margin: 0 0 15px 0;"><strong>R$ 50</strong></p>
-                    <p style="margin: 0 0 20px 0; color: #7f8c8d; line-height: 1.5;">Patrocina 1 evento comunitário</p>
-                    <a href="#doacao-processo" class="donation-btn" style="background: var(--accent-purple);" data-route="doacao-processo">DOAR R$ 50</a>
-                </div>
-            </div>
-
-            <!-- DOAÇÃO PERSONALIZADA -->
-            <div class="highlight-box" style="text-align: center;">
-                <h3 style="margin: 0 0 15px 0; color: var(--primary-dark);">💎 DOAÇÃO PERSONALIZADA</h3>
-                <p style="margin: 0 0 20px 0;">Quer doar um valor diferente? Entre em contato conosco!</p>
-                <a href="mailto:misscabritas2@gmail.com" class="donation-btn" style="background: var(--accent-orange); color: var(--primary-dark);">
-                    📧 DOAR OUTRO VALOR
-                </a>
-            </div>
-        </div>
-
-        <!-- TRANSPARÊNCIA -->
-        <div id="transparencia" class="donation-card">
-            <h2 class="title-badge" style="background: var(--accent-red);">🔍 TRANSPARÊNCIA TOTAL</h2>
-            
-            <div class="highlight-box">
-                <h3 style="color: var(--accent-blue); margin: 0 0 15px 0;">💰 PARA ONDE VAI SEU DINHEIRO?</h3>
-                <ul style="color: var(--primary-dark); margin: 0; padding-left: 20px; line-height: 1.8;">
-                    <li><strong>60% - Infraestrutura:</strong> Servidores Discord, hospedagem do site</li>
-                    <li><strong>25% - Eventos:</strong> Premiações, torneios, jogos para sorteio</li>
-                    <li><strong>10% - Conteúdo:</strong> Criação de guias, materiais educativos</li>
-                    <li><strong>5% - Taxas:</strong> Plataformas de pagamento</li>
-                </ul>
-            </div>
-
-            <div class="testimonial">
-                <h3 style="margin: 0 0 15px 0; color: white;">💬 DEPOIMENTO DE DOADOR</h3>
-                <p style="margin: 0 0 15px 0; font-style: italic; line-height: 1.6;">"Doei R$ 25 e uma semana depois vi um post de um gamer que platinou 
-                Dark Souls após 2 anos tentando. Saber que minha doação ajudou nisso não tem preço!"</p>
-                <p style="margin: 0; font-weight: bold;">- Carlos, doador desde 2023</p>
-            </div>
-        </div>
-
-        <!-- CALL TO ACTION FINAL -->
-        <div class="donation-hero" style="margin-top: 40px;">
-            <h2 style="margin: 0 0 20px 0; font-size: 2.2em;">🎮 JUNTE-SE AOS NOSSOS APOIADORES!</h2>
-            <p style="margin: 0 0 30px 0; font-size: 1.2em;">Cada real doado ajuda um gamer a superar seus desafios</p>
-            <a href="#doacao-processo" class="donation-btn" style="background: var(--accent-red); font-size: 1.2em; padding: 18px 35px;" data-route="doacao-processo">
-                ❤️ DOAR AGORA
-            </a>
-            <p style="margin: 20px 0 0 0; font-size: 0.9em; opacity: 0.8;">
-                Todos os Gamers agradecem a sua colaboração!
-            </p>
-        </div>
-
-        <!-- Botão Voltar -->
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="#home" class="back-btn" data-route="home">← Voltar para Home</a>
-        </div>
-    </div>
-</section>
-
-<style>
-    .donation-card {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        margin-bottom: 30px;
-        border-left: 5px solid var(--accent-red);
-    }
-    .impact-stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-    .stat-item {
-        background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
-        color: white;
-        padding: 25px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(233, 69, 96, 0.2);
-    }
-    .donation-option {
-        background: #f8f9fa;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 15px 0;
-        border-left: 4px solid var(--accent-red);
-        text-align: center;
-        transition: all 0.3s;
-    }
-    .donation-option:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .donation-btn {
-        background: var(--accent-red);
-        color: white;
-        padding: 15px 30px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        margin: 10px 5px;
-        font-size: 1.1em;
-        transition: all 0.3s;
-    }
-    .donation-btn:hover {
-        background: #c0392b;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
-    }
-    .testimonial {
-        background: linear-gradient(135deg, #28a745, #20c997);
-        color: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 20px 0;
-        border-left: 4px solid #155724;
-    }
-    .progress-bar {
-        background: #ecf0f1;
-        border-radius: 10px;
-        height: 20px;
-        margin: 20px 0;
-        overflow: hidden;
-    }
-    .progress-fill {
-        background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
-        height: 100%;
-        border-radius: 10px;
-        width: 65%;
-    }
-    .donation-hero {
-        background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
-        color: white;
-        padding: 40px;
-        border-radius: 15px;
-        text-align: center;
-        margin-bottom: 40px;
-        box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
-    }
-    .back-btn {
-        background: var(--accent-blue);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 25px;
-        text-decoration: none;
-        display: inline-block;
-        font-weight: bold;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-    }
-    .back-btn:hover {
-        background: var(--accent-red);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-</style>
+    </footer>
+</body>
+</html>
