@@ -411,3 +411,27 @@ body {
         padding: 1.5rem;
     }
 }
+
+/* === CORREÇÃO PARA O QUADRO DE MENTORES === */
+
+.objective-card p {
+    color: var(--text-dark) !important;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.objective-card strong {
+    color: var(--accent-red) !important;
+}
+
+/* Garante que todo o texto dentro do objective-card seja visível */
+.objective-card * {
+    color: var(--text-dark) !important;
+}
+
+.objective-card h1,
+.objective-card h2,
+.objective-card h3,
+.objective-card h4 {
+    color: inherit !important;
+}
